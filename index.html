@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>මිරිස්වත්ත අපේ ගම එකමුතුව</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;font-family:'Segoe UI',sans-serif}
+body{background:linear-gradient(180deg,#eaf6ff,#ffffff);color:#123}
+header{position:sticky;top:0;z-index:999;background:#0f4c81;padding:14px 30px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 18px rgba(0,0,0,.12)}
+.logo{display:flex;align-items:center;gap:12px;color:#fff;font-weight:700;font-size:20px}
+.logo img{width:58px;height:58px;border-radius:50%;object-fit:cover;border:3px solid #fff;background:#fff}
+nav{display:flex;gap:12px;flex-wrap:wrap}
+nav a{text-decoration:none;color:#fff;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,.15);box-shadow:0 4px 12px rgba(0,0,0,.12);transition:.3s}
+nav a:hover{background:#fff;color:#0f4c81;transform:translateY(-2px)}
+.hero{padding:100px 20px;text-align:center;background:linear-gradient(135deg,#0f4c81,#2e86de);color:white}
+.hero h1{font-size:42px;margin-bottom:14px}
+.hero p{font-size:20px}
+.section{padding:80px 20px;max-width:1200px;margin:auto}
+.section-title{font-size:34px;text-align:center;margin-bottom:40px;color:#0f4c81}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
+.card{background:#fff;padding:25px;border-radius:18px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
+.objective-card{background:white;padding:24px;border-radius:18px;box-shadow:0 10px 25px rgba(0,0,0,.08);line-height:1.8}
+.committee-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.member-card{background:#fff;padding:22px;border-radius:18px;text-align:center;box-shadow:0 8px 22px rgba(0,0,0,.08)}
+.portal-box{max-width:760px;margin:auto;background:white;padding:35px;border-radius:20px;box-shadow:0 12px 30px rgba(0,0,0,.12)}
+.portal-box input{width:100%;padding:14px;font-size:18px;border-radius:12px;border:1px solid #ccc;margin-bottom:15px}
+.buttons{display:flex;gap:10px}
+button{padding:12px 24px;border:none;border-radius:12px;cursor:pointer;font-size:16px;font-weight:600}
+.search-btn{background:#0f4c81;color:#fff}
+.reset-btn{background:#ddd}
+table{width:100%;border-collapse:collapse;margin-top:15px}
+th,td{padding:14px;border-bottom:1px solid #eee;text-align:left}
+th{background:#f5f9ff}
+.badge{padding:6px 12px;border-radius:999px;font-size:14px;font-weight:600}
+.paid{background:#d8f5df;color:#0f7a35}
+.due{background:#fde0e0;color:#c0392b}
+.reveal{opacity:0;transform:translateY(40px);transition:all .8s ease}
+.reveal.active{opacity:1;transform:translateY(0)}
+footer{background:#0f4c81;color:#fff;text-align:center;padding:25px;margin-top:50px}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">
+<img src="logo.png" alt="logo">
+<span>🏛️ මිරිස්වත්ත අපේ ගම එකමුතුව</span>
+</div>
+
+<nav>
+<a href="#home">ඇරඹුම</a>
+<a href="#about">අප ගැන</a>
+<a href="#objectives">අරමුණු</a>
+<a href="#services">සේවා</a>
+<a href="#committee">නිලධාරි මණ්ඩලය</a>
+<a href="#portal">සාමාජික පියස</a>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<h1>🏛️ මිරිස්වත්ත අපේ ගම එකමුතුව</h1>
+<p>එකමුතුවෙන් සංවර්ධනය කරමු අපේ ගම 🌿</p>
+</section>
+
+<section class="section reveal" id="about">
+<h2 class="section-title">📖 අප ගැන</h2>
+<div class="card">
+මිරිස්වත්ත අපේ ගම එකමුතුව යනු ගමේ ජනතාව එකමුතුවෙන් සමාජීය හා සංවර්ධන කටයුතු සඳහා කැපවූ සංවිධානයකි.
+</div>
+</section>
+
+<section class="section reveal" id="objectives">
+<h2 class="section-title">🎯 අපගේ ප්‍රධාන අරමුණු</h2>
+
+<div class="card-grid">
+
+<div class="objective-card">
+🤝 <strong>ප්‍රජා සංවර්ධනය සහ එකමුතුකම:</strong><br>
+මිරිස්වත්ත ප්‍රදේශයේ පදිංචි සියලුම ගම්වාසීන් අතර අන්‍යෝන්‍ය සුහදතාවය, සහයෝගීතාවය සහ සහෝදරත්වය වර්ධනය කරමින් එකම පවුලක් මෙන් එකමුතු කිරීම.
+</div>
+
+<div class="objective-card">
+💙 <strong>සාමාජික සුභසාධනය සලසාදීම:</strong><br>
+සාමාජිකයන්ගේ සහ ඔවුන්ගේ පවුල්වල සාමාජිකයන්ගේ පොදු සුභසාධනය වෙනුවෙන් පෙනී සිටීම සහ විවිධ සුභසාධන වැඩසටහන් ක්‍රියාත්මක කිරීම.
+</div>
+
+<div class="objective-card">
+🏛️ <strong>දුෂ්කර අවස්ථාවලදී සහන සැලසීම:</strong><br>
+සාමාජිකයෙකුගේ හෝ ඔවුන්ගේ පවුලේ කෙනෙකුගේ හදිසි අසනීපයකදී හෝ අවමංගල්‍ය අවස්ථාවකදී (රු. 20,000/= ක මූල්‍ය ප්‍රතිපාදන වැනි) අවශ්‍ය සහයෝගය සහ සහන කඩිනමින් ලබාදීම.
+</div>
+
+<div class="objective-card">
+🌱 <strong>ළමා හා තරුණ අභිවර්ධනය:</strong><br>
+ගමේ දරුවන්ගේ අධ්‍යාපනික, ක්‍රීඩා සහ සංස්කෘතික දක්ෂතා ඔප්නැංවීම සඳහා අවශ්‍ය පරිසරය සකස් කිරීම සහ ඔවුන් දිරිමත් කිරීම.
+</div>
+
+<div class="objective-card">
+🏡 <strong>ගමේ පොදු පහසුකම් සංවර්ධනය:</strong><br>
+ප්‍රදේශයේ පොදු අවශ්‍යතා, පරිසර සංරක්ෂණ කටයුතු සහ ආගමික/සමාජීය උත්සව සංවිධානය කරමින් ගම සමෘද්ධිමත් ප්‍රදේශයක් බවට පත් කිරීම.
+</div>
+
+</div>
+</section>
+
+<section class="section reveal" id="services">
+<h2 class="section-title">✨ අපගේ සේවා</h2>
+<div class="card-grid">
+<div class="card">🌱 ග්‍රාම සංවර්ධන වැඩසටහන්</div>
+<div class="card">🎓 අධ්‍යාපනික සහය</div>
+<div class="card">🤝 සමාජ සේවා වැඩසටහන්</div>
+</div>
+</section>
+
+<section class="section reveal" id="committee">
+<h2 class="section-title">👤 නිලධාරි මණ්ඩලය</h2>
+<div class="committee-grid">
+<div class="member-card">සභාපති<br><strong>චන්ද්‍රරත්න පල්ලේගම</strong></div>
+<div class="member-card">ලේකම්<br><strong>ධම්මික විජයවර්ධන</strong></div>
+<div class="member-card">භාණ්ඩාගාරික<br><strong>ප්‍රසාද් යාපා</strong></div>
+<div class="member-card">ගණන් පරීක්ෂක<br><strong>නන්දන සමරතුංග</strong></div>
+<div class="member-card">ප්‍රධාන සංවිධායක<br><strong>කීර්ති ජයවීර</strong></div>
+<div class="member-card">උප සභාපති<br><strong>ස්ටැන්ලි බස්නායක</strong></div>
+<div class="member-card">උප ලේකම්<br><strong>ජගත් මාරසිංහ</strong></div>
+</div>
+</section>
+
+<section class="section reveal" id="portal">
+<h2 class="section-title">💳 සාමාජික පියස</h2>
+<div class="portal-box">
+<input id="memberId" type="number" placeholder="සාමාජික අංකය ඇතුලත් කරන්න">
+<div class="buttons">
+<button class="search-btn" onclick="searchMember()">සෙවීම 🔍</button>
+<button class="reset-btn" onclick="resetSearch()">මැකීම</button>
+</div>
+<div id="result"></div>
+</div>
+</section>
+
+<footer>
+© 2026 මිරිස්වත්ත අපේ ගම එකමුතුව
+</footer>
+
+<script>
+const months=['අගෝස්තු','සැප්තැම්බර්','ඔක්තෝබර්','නොවැම්බර්','දෙසැම්බර්','ජනවාරි','පෙබරවාරි','මාර්තු','අප්‍රේල්','මැයි','ජූනි','ජූලි'];
+const members=[];
+function statusArray(paidCount){return months.map((m,i)=>i<paidCount?'Paid':'Due');}
+
+members.push(
+{id:1,name:'චන්ද්‍රරත්න පරණගම',payments:statusArray(12)},
+{id:2,name:'හසින්ද්‍ර පෙරේරා',payments:statusArray(12)},
+{id:12,name:'පද්මා පාවි රාජපක්ෂ',payments:statusArray(0)},
+{id:18,name:'ධනුක පෙරේරා',payments:['Paid',...Array(11).fill('Due')]},
+{id:38,name:'එන් එස් ජයසිංහ',payments:statusArray(0)},
+{id:50,name:'වී ඩබ්ලිව් බණ්ඩාර',payments:statusArray(7)},
+{id:58,name:'එම් කේ රසික ප්‍රියන්ත',payments:statusArray(5)}
+);
+
+for(let i=3;i<=170;i++){
+if(!members.find(m=>m.id===i)){
+members.push({
+id:i,
+name:`සාමාජික මහතා/මිය ${i}`,
+payments:statusArray(Math.floor(Math.random()*12))
+});
+}
+}
+
+function searchMember(){
+const id=parseInt(document.getElementById('memberId').value);
+const member=members.find(m=>m.id===id);
+const result=document.getElementById('result');
+
+if(!member){
+result.innerHTML='❌ සාමාජිකයා හමු නොවීය';
+return;
+}
+
+let rows='';
+
+months.forEach((month,index)=>{
+rows+=`
+<tr>
+<td>${month}</td>
+<td>${member.payments[index]==='Paid'
+?'<span class="badge paid">ගෙවා ඇත</span>'
+:'<span class="badge due">හිඟ මුදල් පවතී</span>'}</td>
+</tr>
+`;
+});
+
+result.innerHTML=`
+<h3>👤 සාමාජිකයාගේ නම: ${member.name}</h3>
+<table>
+<tr><th>මාසය</th><th>ගෙවීම් තත්ත්වය</th></tr>
+${rows}
+</table>
+`;
+}
+
+function resetSearch(){
+document.getElementById('memberId').value='';
+document.getElementById('result').innerHTML='';
+}
+
+document.getElementById('memberId').addEventListener('keypress',function(e){
+if(e.key==='Enter'){searchMember();}
+});
+
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('active');
+}
+});
+});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>
