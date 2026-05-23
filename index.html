@@ -3,221 +3,729 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
 <title>මිරිස්වත්ත අපේ ගම එකමුතුව</title>
-
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;font-family:'Segoe UI',sans-serif}
-body{background:linear-gradient(180deg,#eaf6ff,#ffffff);color:#123}
-header{position:sticky;top:0;z-index:999;background:#0f4c81;padding:14px 30px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 18px rgba(0,0,0,.12)}
-.logo{display:flex;align-items:center;gap:12px;color:#fff;font-weight:700;font-size:20px}
-.logo img{width:58px;height:58px;border-radius:50%;object-fit:cover;border:3px solid #fff;background:#fff}
-nav{display:flex;gap:12px;flex-wrap:wrap}
-nav a{text-decoration:none;color:#fff;padding:10px 18px;border-radius:999px;background:rgba(255,255,255,.15);box-shadow:0 4px 12px rgba(0,0,0,.12);transition:.3s}
-nav a:hover{background:#fff;color:#0f4c81;transform:translateY(-2px)}
-.hero{padding:100px 20px;text-align:center;background:linear-gradient(135deg,#0f4c81,#2e86de);color:white}
-.hero h1{font-size:42px;margin-bottom:14px}
-.hero p{font-size:20px}
-.section{padding:80px 20px;max-width:1200px;margin:auto}
-.section-title{font-size:34px;text-align:center;margin-bottom:40px;color:#0f4c81}
-.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
-.card{background:#fff;padding:25px;border-radius:18px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
-.objective-card{background:white;padding:24px;border-radius:18px;box-shadow:0 10px 25px rgba(0,0,0,.08);line-height:1.8}
-.committee-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.member-card{background:#fff;padding:22px;border-radius:18px;text-align:center;box-shadow:0 8px 22px rgba(0,0,0,.08)}
-.portal-box{max-width:760px;margin:auto;background:white;padding:35px;border-radius:20px;box-shadow:0 12px 30px rgba(0,0,0,.12)}
-.portal-box input{width:100%;padding:14px;font-size:18px;border-radius:12px;border:1px solid #ccc;margin-bottom:15px}
-.buttons{display:flex;gap:10px}
-button{padding:12px 24px;border:none;border-radius:12px;cursor:pointer;font-size:16px;font-weight:600}
-.search-btn{background:#0f4c81;color:#fff}
-.reset-btn{background:#ddd}
-table{width:100%;border-collapse:collapse;margin-top:15px}
-th,td{padding:14px;border-bottom:1px solid #eee;text-align:left}
-th{background:#f5f9ff}
-.badge{padding:6px 12px;border-radius:999px;font-size:14px;font-weight:600}
-.paid{background:#d8f5df;color:#0f7a35}
-.due{background:#fde0e0;color:#c0392b}
-.reveal{opacity:0;transform:translateY(40px);transition:all .8s ease}
-.reveal.active{opacity:1;transform:translateY(0)}
-footer{background:#0f4c81;color:#fff;text-align:center;padding:25px;margin-top:50px}
+  :root {
+    --primary: #0f4c81;
+    --primary-dark: #0a3560;
+    --accent: #2e86de;
+    --accent-light: #74b9ff;
+    --gold: #f9ca24;
+    --surface: #ffffff;
+    --surface-2: #f0f7ff;
+    --text: #0d2137;
+    --text-muted: #4a6580;
+    --border: #d6e8f7;
+    --success: #00b894;
+    --danger: #e17055;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --shadow: 0 4px 24px rgba(15,76,129,0.10);
+    --shadow-lg: 0 8px 40px rgba(15,76,129,0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans Sinhala', 'Segoe UI', sans-serif;
+    background: #f5f9ff;
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  /* ── HEADER ── */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: var(--primary);
+    box-shadow: 0 2px 20px rgba(0,0,0,0.18);
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: auto;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-weight: 700;
+    font-size: clamp(14px, 3.5vw, 18px);
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .logo-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    border: 2px solid rgba(255,255,255,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+
+  /* hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+    border: none;
+    background: transparent;
+    flex-shrink: 0;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  nav {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.9);
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    background: rgba(255,255,255,0.12);
+    transition: 0.25s;
+    white-space: nowrap;
+  }
+  nav a:hover, nav a:focus {
+    background: #fff;
+    color: var(--primary);
+    transform: translateY(-1px);
+  }
+
+  /* mobile nav drawer */
+  @media (max-width: 768px) {
+    .hamburger { display: flex; }
+    nav {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      position: absolute;
+      top: 100%;
+      left: 0; right: 0;
+      background: var(--primary-dark);
+      padding: 16px 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    }
+    nav.open { display: flex; }
+    nav a {
+      width: 100%;
+      text-align: center;
+      padding: 12px;
+      font-size: 15px;
+      background: rgba(255,255,255,0.10);
+    }
+    nav a:hover { background: rgba(255,255,255,0.22); color: #fff; transform: none; }
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--accent) 100%);
+    color: #fff;
+    text-align: center;
+    padding: clamp(60px, 10vw, 120px) 20px clamp(50px, 8vw, 100px);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 60% 40%, rgba(255,255,255,0.08) 0%, transparent 60%);
+  }
+  .hero-content { position: relative; max-width: 700px; margin: auto; }
+  .hero h1 {
+    font-size: clamp(24px, 6vw, 48px);
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 14px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.2);
+  }
+  .hero p {
+    font-size: clamp(15px, 3.5vw, 20px);
+    opacity: 0.92;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    padding: clamp(48px, 8vw, 90px) 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  .section-title {
+    font-size: clamp(22px, 5vw, 34px);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: clamp(28px, 4vw, 48px);
+    color: var(--primary);
+  }
+  .section-title span { color: var(--accent); }
+
+  /* ── ABOUT CARD ── */
+  .about-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: clamp(24px, 5vw, 40px);
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--accent);
+    font-size: clamp(15px, 2.5vw, 17px);
+    line-height: 1.9;
+    color: var(--text-muted);
+  }
+
+  /* ── OBJECTIVES GRID ── */
+  .objectives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 20px;
+  }
+  .obj-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: clamp(20px, 4vw, 28px);
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+    border-top: 4px solid var(--accent-light);
+  }
+  .obj-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+  .obj-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+    display: block;
+  }
+  .obj-card h3 {
+    font-size: clamp(15px, 2.5vw, 17px);
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+  }
+  .obj-card p {
+    font-size: clamp(13px, 2vw, 15px);
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  /* ── SERVICES ── */
+  .services-bg {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    padding: clamp(48px, 8vw, 80px) 20px;
+  }
+  .services-inner { max-width: 1200px; margin: auto; }
+  .services-bg .section-title { color: #fff; }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    gap: 16px;
+  }
+  .svc-card {
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    backdrop-filter: blur(8px);
+    border-radius: var(--radius);
+    padding: clamp(20px, 4vw, 30px) 20px;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: clamp(14px, 2.5vw, 16px);
+    transition: 0.3s;
+  }
+  .svc-card:hover { background: rgba(255,255,255,0.25); transform: translateY(-3px); }
+  .svc-card .svc-icon { font-size: 36px; display: block; margin-bottom: 10px; }
+
+  /* ── COMMITTEE ── */
+  .committee-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+    gap: 16px;
+  }
+  .member-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: clamp(18px, 4vw, 26px) 16px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: 0.3s;
+  }
+  .member-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+  .member-avatar {
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px;
+    margin: 0 auto 12px;
+  }
+  .member-role {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .member-name {
+    font-size: clamp(13px, 2vw, 15px);
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  /* ── PORTAL ── */
+  .portal-section {
+    background: var(--surface-2);
+    padding: clamp(48px, 8vw, 80px) 20px;
+  }
+  .portal-inner { max-width: 1200px; margin: auto; }
+  .portal-box {
+    max-width: 680px;
+    margin: auto;
+    background: var(--surface);
+    border-radius: 20px;
+    padding: clamp(24px, 5vw, 44px);
+    box-shadow: var(--shadow-lg);
+  }
+  .portal-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .portal-input-wrap {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .portal-input-wrap input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px 16px;
+    font-size: 16px;
+    font-family: inherit;
+    border-radius: var(--radius-sm);
+    border: 2px solid var(--border);
+    outline: none;
+    transition: 0.25s;
+    color: var(--text);
+  }
+  .portal-input-wrap input:focus { border-color: var(--accent); }
+
+  .btn {
+    padding: 13px 22px;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: inherit;
+    transition: 0.25s;
+    white-space: nowrap;
+  }
+  .btn-primary { background: var(--primary); color: #fff; }
+  .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); }
+  .btn-ghost { background: var(--surface-2); color: var(--text-muted); }
+  .btn-ghost:hover { background: var(--border); }
+
+  /* result area */
+  #result { margin-top: 20px; }
+  .member-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--surface-2);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin-bottom: 18px;
+    border-left: 4px solid var(--accent);
+  }
+  .member-header-avatar {
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .member-header h3 { font-size: clamp(15px, 3vw, 18px); color: var(--primary); font-weight: 700; }
+  .member-header p { font-size: 13px; color: var(--text-muted); }
+
+  /* payment table */
+  .payment-table-wrap {
+    overflow-x: auto;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+  }
+  table { width: 100%; border-collapse: collapse; min-width: 280px; }
+  th, td {
+    padding: clamp(10px, 2.5vw, 14px) clamp(12px, 3vw, 20px);
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+    font-size: clamp(13px, 2.5vw, 15px);
+  }
+  th { background: var(--surface-2); color: var(--primary); font-weight: 700; font-size: 13px; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #fafcff; }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .paid { background: #d1fae5; color: #065f46; }
+  .due  { background: #fee2e2; color: #991b1b; }
+
+  .error-box {
+    background: #fff5f5;
+    border: 1px solid #fecaca;
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    color: #991b1b;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  /* ── SUMMARY PILLS ── */
+  .summary-pills {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .pill {
+    padding: 6px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .pill-paid { background: #d1fae5; color: #065f46; }
+  .pill-due  { background: #fee2e2; color: #991b1b; }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.active { opacity: 1; transform: translateY(0); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--primary-dark);
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+    padding: 28px 20px;
+    font-size: 14px;
+  }
+  footer strong { color: #fff; }
+
+  /* ── UTILITY ── */
+  @media (max-width: 480px) {
+    .portal-input-wrap { flex-direction: column; }
+    .portal-input-wrap input, .btn { width: 100%; }
+  }
 </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header>
-<div class="logo">
-<img src="logo.png" alt="logo">
-<span>🏛️ මිරිස්වත්ත අපේ ගම එකමුතුව</span>
-</div>
-
-<nav>
-<a href="#home">ඇරඹුම</a>
-<a href="#about">අප ගැන</a>
-<a href="#objectives">අරමුණු</a>
-<a href="#services">සේවා</a>
-<a href="#committee">නිලධාරි මණ්ඩලය</a>
-<a href="#portal">සාමාජික පියස</a>
-</nav>
+  <div class="header-inner">
+    <a class="logo" href="#home">
+      <div class="logo-icon">🏛️</div>
+      <span>මිරිස්වත්ත අපේ ගම</span>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav">
+      <a href="#home" onclick="closeNav()">ඇරඹුම</a>
+      <a href="#about" onclick="closeNav()">අප ගැන</a>
+      <a href="#objectives" onclick="closeNav()">අරමුණු</a>
+      <a href="#services" onclick="closeNav()">සේවා</a>
+      <a href="#committee" onclick="closeNav()">නිලධාරි</a>
+      <a href="#portal" onclick="closeNav()">සාමාජික පියස</a>
+    </nav>
+  </div>
 </header>
 
+<!-- HERO -->
 <section class="hero" id="home">
-<h1>🏛️ මිරිස්වත්ත අපේ ගම එකමුතුව</h1>
-<p>එකමුතුවෙන් සංවර්ධනය කරමු අපේ ගම 🌿</p>
+  <div class="hero-content">
+    <div class="hero-badge">🌿 ප්‍රජා සංවිධානය</div>
+    <h1>🏛️ මිරිස්වත්ත<br>අපේ ගම එකමුතුව</h1>
+    <p>එකමුතුවෙන් සංවර්ධනය කරමු අපේ ගම</p>
+  </div>
 </section>
 
+<!-- ABOUT -->
 <section class="section reveal" id="about">
-<h2 class="section-title">📖 අප ගැන</h2>
-<div class="card">
-මිරිස්වත්ත අපේ ගම එකමුතුව යනු ගමේ ජනතාව එකමුතුවෙන් සමාජීය හා සංවර්ධන කටයුතු සඳහා කැපවූ සංවිධානයකි.
-</div>
+  <h2 class="section-title">📖 අප <span>ගැන</span></h2>
+  <div class="about-card">
+    මිරිස්වත්ත අපේ ගම එකමුතුව යනු ගමේ ජනතාව එකමුතුවෙන් සමාජීය හා සංවර්ධන කටයුතු සඳහා කැපවූ සංවිධානයකි. අපගේ ප්‍රධාන අරමුණ වන්නේ ප්‍රදේශයේ සෑම ගම්වාසියකුටම ශක්තිමත් ප්‍රජා සහයෝගයක් සහ සුභසාධනයක් ලබාදීමයි.
+  </div>
 </section>
 
+<!-- OBJECTIVES -->
 <section class="section reveal" id="objectives">
-<h2 class="section-title">🎯 අපගේ ප්‍රධාන අරමුණු</h2>
+  <h2 class="section-title">🎯 අපගේ ප්‍රධාන <span>අරමුණු</span></h2>
+  <div class="objectives-grid">
 
-<div class="card-grid">
+    <div class="obj-card">
+      <span class="obj-icon">🤝</span>
+      <h3>ප්‍රජා සංවර්ධනය සහ එකමුතුකම</h3>
+      <p>මිරිස්වත්ත ප්‍රදේශයේ පදිංචි සියලුම ගම්වාසීන් අතර අන්‍යෝන්‍ය සුහදතාවය, සහයෝගීතාවය සහ සහෝදරත්වය වර්ධනය කිරීම.</p>
+    </div>
 
-<div class="objective-card">
-🤝 <strong>ප්‍රජා සංවර්ධනය සහ එකමුතුකම:</strong><br>
-මිරිස්වත්ත ප්‍රදේශයේ පදිංචි සියලුම ගම්වාසීන් අතර අන්‍යෝන්‍ය සුහදතාවය, සහයෝගීතාවය සහ සහෝදරත්වය වර්ධනය කරමින් එකම පවුලක් මෙන් එකමුතු කිරීම.
-</div>
+    <div class="obj-card">
+      <span class="obj-icon">💙</span>
+      <h3>සාමාජික සුභසාධනය</h3>
+      <p>සාමාජිකයන්ගේ සහ ඔවුන්ගේ පවුල්වල සාමාජිකයන්ගේ පොදු සුභසාධනය වෙනුවෙන් විවිධ සුභසාධන වැඩසටහන් ක්‍රියාත්මක කිරීම.</p>
+    </div>
 
-<div class="objective-card">
-💙 <strong>සාමාජික සුභසාධනය සලසාදීම:</strong><br>
-සාමාජිකයන්ගේ සහ ඔවුන්ගේ පවුල්වල සාමාජිකයන්ගේ පොදු සුභසාධනය වෙනුවෙන් පෙනී සිටීම සහ විවිධ සුභසාධන වැඩසටහන් ක්‍රියාත්මක කිරීම.
-</div>
+    <div class="obj-card">
+      <span class="obj-icon">🏛️</span>
+      <h3>දුෂ්කර අවස්ථාවලදී සහන</h3>
+      <p>හදිසි අසනීපයකදී හෝ අවමංගල්‍ය අවස්ථාවකදී රු. 20,000/= ක මූල්‍ය ප්‍රතිපාදන ඇතුළු අවශ්‍ය සහාය ලබාදීම.</p>
+    </div>
 
-<div class="objective-card">
-🏛️ <strong>දුෂ්කර අවස්ථාවලදී සහන සැලසීම:</strong><br>
-සාමාජිකයෙකුගේ හෝ ඔවුන්ගේ පවුලේ කෙනෙකුගේ හදිසි අසනීපයකදී හෝ අවමංගල්‍ය අවස්ථාවකදී (රු. 20,000/= ක මූල්‍ය ප්‍රතිපාදන වැනි) අවශ්‍ය සහයෝගය සහ සහන කඩිනමින් ලබාදීම.
-</div>
+    <div class="obj-card">
+      <span class="obj-icon">🌱</span>
+      <h3>ළමා හා තරුණ අභිවර්ධනය</h3>
+      <p>ගමේ දරුවන්ගේ අධ්‍යාපනික, ක්‍රීඩා සහ සංස්කෘතික දක්ෂතා ඔප්නැංවීම සඳහා අවශ්‍ය පරිසරය සකස් කිරීම.</p>
+    </div>
 
-<div class="objective-card">
-🌱 <strong>ළමා හා තරුණ අභිවර්ධනය:</strong><br>
-ගමේ දරුවන්ගේ අධ්‍යාපනික, ක්‍රීඩා සහ සංස්කෘතික දක්ෂතා ඔප්නැංවීම සඳහා අවශ්‍ය පරිසරය සකස් කිරීම සහ ඔවුන් දිරිමත් කිරීම.
-</div>
+    <div class="obj-card">
+      <span class="obj-icon">🏡</span>
+      <h3>පොදු පහසුකම් සංවර්ධනය</h3>
+      <p>ප්‍රදේශයේ පොදු අවශ්‍යතා, පරිසර සංරක්ෂණ කටයුතු සහ ආගමික/සමාජීය උත්සව සංවිධානය කිරීම.</p>
+    </div>
 
-<div class="objective-card">
-🏡 <strong>ගමේ පොදු පහසුකම් සංවර්ධනය:</strong><br>
-ප්‍රදේශයේ පොදු අවශ්‍යතා, පරිසර සංරක්ෂණ කටයුතු සහ ආගමික/සමාජීය උත්සව සංවිධානය කරමින් ගම සමෘද්ධිමත් ප්‍රදේශයක් බවට පත් කිරීම.
-</div>
-
-</div>
+  </div>
 </section>
 
-<section class="section reveal" id="services">
-<h2 class="section-title">✨ අපගේ සේවා</h2>
-<div class="card-grid">
-<div class="card">🌱 ග්‍රාම සංවර්ධන වැඩසටහන්</div>
-<div class="card">🎓 අධ්‍යාපනික සහය</div>
-<div class="card">🤝 සමාජ සේවා වැඩසටහන්</div>
+<!-- SERVICES -->
+<div class="services-bg reveal" id="services">
+  <div class="services-inner">
+    <h2 class="section-title">✨ අපගේ සේවා</h2>
+    <div class="services-grid">
+      <div class="svc-card"><span class="svc-icon">🌱</span>ග්‍රාම සංවර්ධන වැඩසටහන්</div>
+      <div class="svc-card"><span class="svc-icon">🎓</span>අධ්‍යාපනික සහය</div>
+      <div class="svc-card"><span class="svc-icon">🤝</span>සමාජ සේවා වැඩසටහන්</div>
+    </div>
+  </div>
 </div>
-</section>
 
+<!-- COMMITTEE -->
 <section class="section reveal" id="committee">
-<h2 class="section-title">👤 නිලධාරි මණ්ඩලය</h2>
-<div class="committee-grid">
-<div class="member-card">සභාපති<br><strong>චන්ද්‍රරත්න පල්ලේගම</strong></div>
-<div class="member-card">ලේකම්<br><strong>ධම්මික විජයවර්ධන</strong></div>
-<div class="member-card">භාණ්ඩාගාරික<br><strong>ප්‍රසාද් යාපා</strong></div>
-<div class="member-card">ගණන් පරීක්ෂක<br><strong>නන්දන සමරතුංග</strong></div>
-<div class="member-card">ප්‍රධාන සංවිධායක<br><strong>කීර්ති ජයවීර</strong></div>
-<div class="member-card">උප සභාපති<br><strong>ස්ටැන්ලි බස්නායක</strong></div>
-<div class="member-card">උප ලේකම්<br><strong>ජගත් මාරසිංහ</strong></div>
-</div>
+  <h2 class="section-title">👤 නිලධාරි <span>මණ්ඩලය</span></h2>
+  <div class="committee-grid">
+    <div class="member-card">
+      <div class="member-avatar">👨</div>
+      <div class="member-role">සභාපති</div>
+      <div class="member-name">චන්ද්‍රරත්න පල්ලේගම</div>
+    </div>
+    <div class="member-card">
+      <div class="member-avatar">👨</div>
+      <div class="member-role">උප සභාපති</div>
+      <div class="member-name">ස්ටැන්ලි බස්නායක</div>
+    </div>
+    <div class="member-card">
+      <div class="member-avatar">👨</div>
+      <div class="member-role">ලේකම්</div>
+      <div class="member-name">ධම්මික විජයවර්ධන</div>
+    </div>
+    <div class="member-card">
+      <div class="member-avatar">👨</div>
+      <div class="member-role">උප ලේකම්</div>
+      <div class="member-name">ජගත් මාරසිංහ</div>
+    </div>
+    <div class="member-card">
+      <div class="member-avatar">👨</div>
+      <div class="member-role">භාණ්ඩාගාරික</div>
+      <div class="member-name">ප්‍රසාද් යාපා</div>
+    </div>
+    <div class="member-card">
+      <div class="member-avatar">👨</div>
+      <div class="member-role">ගණන් පරීක්ෂක</div>
+      <div class="member-name">නන්දන සමරතුංග</div>
+    </div>
+    <div class="member-card">
+      <div class="member-avatar">👨</div>
+      <div class="member-role">ප්‍රධාන සංවිධායක</div>
+      <div class="member-name">කීර්ති ජයවීර</div>
+    </div>
+  </div>
 </section>
 
-<section class="section reveal" id="portal">
-<h2 class="section-title">💳 සාමාජික පියස</h2>
-<div class="portal-box">
-<input id="memberId" type="number" placeholder="සාමාජික අංකය ඇතුලත් කරන්න">
-<div class="buttons">
-<button class="search-btn" onclick="searchMember()">සෙවීම 🔍</button>
-<button class="reset-btn" onclick="resetSearch()">මැකීම</button>
+<!-- PORTAL -->
+<div class="portal-section reveal" id="portal">
+  <div class="portal-inner">
+    <h2 class="section-title">💳 සාමාජික <span>පියස</span></h2>
+    <div class="portal-box">
+      <div class="portal-label">සාමාජික අංකය</div>
+      <div class="portal-input-wrap">
+        <input id="memberId" type="number" placeholder="උදා: 1, 18, 50 …" min="1" max="170">
+        <button class="btn btn-primary" onclick="searchMember()">සෙවීම 🔍</button>
+        <button class="btn btn-ghost" onclick="resetSearch()">මැකීම</button>
+      </div>
+      <div id="result"></div>
+    </div>
+  </div>
 </div>
-<div id="result"></div>
-</div>
-</section>
 
+<!-- FOOTER -->
 <footer>
-© 2026 මිරිස්වත්ත අපේ ගම එකමුතුව
+  © 2026 <strong>මිරිස්වත්ත අපේ ගම එකමුතුව</strong> · සියළු හිමිකම් ඇවිරිණි
 </footer>
 
 <script>
-const months=['අගෝස්තු','සැප්තැම්බර්','ඔක්තෝබර්','නොවැම්බර්','දෙසැම්බර්','ජනවාරි','පෙබරවාරි','මාර්තු','අප්‍රේල්','මැයි','ජූනි','ජූලි'];
-const members=[];
-function statusArray(paidCount){return months.map((m,i)=>i<paidCount?'Paid':'Due');}
+  // ── hamburger ──
+  const hamburger = document.getElementById('hamburger');
+  const navEl = document.getElementById('nav');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navEl.classList.toggle('open');
+  });
+  function closeNav() {
+    hamburger.classList.remove('open');
+    navEl.classList.remove('open');
+  }
 
-members.push(
-{id:1,name:'චන්ද්‍රරත්න පරණගම',payments:statusArray(12)},
-{id:2,name:'හරීන්ද්‍ර පෙරේරා ',payments:statusArray(12)},
-{id:12,name:'පත්ම පානි රාජපක්ෂ',payments:statusArray(0)},
-{id:18,name:'ධනුක පෙරේරා',payments:['Paid',...Array(11).fill('Due')]},
-{id:38,name:'එන් එස් ජයසිංහ',payments:statusArray(0)},
-{id:50,name:'වී ඩබ්ලිව් බණ්ඩාර',payments:statusArray(7)},
-{id:58,name:'එම් කේ රසික ප්‍රියන්ත',payments:statusArray(5)}
-);
+  // ── member data ──
+  const months = ['අගෝස්තු','සැප්තැම්බර්','ඔක්තෝබර්','නොවැම්බර්','දෙසැම්බර්','ජනවාරි','පෙබරවාරි','මාර්තු','අප්‍රේල්','මැයි','ජූනි','ජූලි'];
+  const members = [];
 
-for(let i=3;i<=170;i++){
-if(!members.find(m=>m.id===i)){
-members.push({
-id:i,
-name:`සාමාජික මහතා/මිය ${i}`,
-payments:statusArray(Math.floor(Math.random()*12))
-});
-}
-}
+  function statusArray(paidCount) {
+    return months.map((m,i) => i < paidCount ? 'Paid' : 'Due');
+  }
 
-function searchMember(){
-const id=parseInt(document.getElementById('memberId').value);
-const member=members.find(m=>m.id===id);
-const result=document.getElementById('result');
+  const namedMembers = [
+    {id:1,  name:'චන්ද්‍රරත්න පරණගම',      payments:statusArray(12)},
+    {id:2,  name:'හරීන්ද්‍ර පෙරේරා',        payments:statusArray(12)},
+    {id:12, name:'පත්ම පානි රාජපක්ෂ',       payments:statusArray(0)},
+    {id:18, name:'ධනුක පෙරේරා',             payments:['Paid',...Array(11).fill('Due')]},
+    {id:38, name:'එන් එස් ජයසිංහ',         payments:statusArray(0)},
+    {id:50, name:'වී ඩබ්ලිව් බණ්ඩාර',       payments:statusArray(7)},
+    {id:58, name:'එම් කේ රසික ප්‍රියන්ත',   payments:statusArray(5)},
+  ];
+  namedMembers.forEach(m => members.push(m));
 
-if(!member){
-result.innerHTML='❌ සාමාජිකයා හමු නොවීය';
-return;
-}
+  for (let i = 1; i <= 170; i++) {
+    if (!members.find(m => m.id === i)) {
+      members.push({
+        id: i,
+        name: `සාමාජික ${i}`,
+        payments: statusArray(Math.floor(Math.random() * 13))
+      });
+    }
+  }
 
-let rows='';
+  // ── search ──
+  function searchMember() {
+    const id = parseInt(document.getElementById('memberId').value);
+    const member = members.find(m => m.id === id);
+    const result = document.getElementById('result');
 
-months.forEach((month,index)=>{
-rows+=`
-<tr>
-<td>${month}</td>
-<td>${member.payments[index]==='Paid'
-?'<span class="badge paid">ගෙවා ඇත</span>'
-:'<span class="badge due">හිඟ මුදල් පවතී</span>'}</td>
-</tr>
-`;
-});
+    if (!member || isNaN(id)) {
+      result.innerHTML = `<div class="error-box">❌ සාමාජිකයා හමු නොවීය. කරුණාකර නිවැරදි අංකයක් ඇතුලත් කරන්න.</div>`;
+      return;
+    }
 
-result.innerHTML=`
-<h3>👤 සාමාජිකයාගේ නම: ${member.name}</h3>
-<table>
-<tr><th>මාසය</th><th>ගෙවීම් තත්ත්වය</th></tr>
-${rows}
-</table>
-`;
-}
+    const paidCount = member.payments.filter(p => p === 'Paid').length;
+    const dueCount  = 12 - paidCount;
 
-function resetSearch(){
-document.getElementById('memberId').value='';
-document.getElementById('result').innerHTML='';
-}
+    let rows = '';
+    months.forEach((month, i) => {
+      const isPaid = member.payments[i] === 'Paid';
+      rows += `<tr>
+        <td>${month}</td>
+        <td>${isPaid
+          ? '<span class="badge paid">✅ ගෙවා ඇත</span>'
+          : '<span class="badge due">⚠️ හිඟ පවතී</span>'}</td>
+      </tr>`;
+    });
 
-document.getElementById('memberId').addEventListener('keypress',function(e){
-if(e.key==='Enter'){searchMember();}
-});
+    result.innerHTML = `
+      <div class="member-header">
+        <div class="member-header-avatar">👤</div>
+        <div>
+          <h3>${member.name}</h3>
+          <p>සාමාජික අංකය: ${member.id}</p>
+        </div>
+      </div>
+      <div class="summary-pills">
+        <span class="pill pill-paid">✅ ගෙවූ මාස: ${paidCount}</span>
+        <span class="pill pill-due">⚠️ හිඟ මාස: ${dueCount}</span>
+      </div>
+      <div class="payment-table-wrap">
+        <table>
+          <thead><tr><th>මාසය</th><th>ගෙවීම් තත්ත්වය</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    `;
+  }
 
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add('active');
-}
-});
-});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+  function resetSearch() {
+    document.getElementById('memberId').value = '';
+    document.getElementById('result').innerHTML = '';
+  }
+
+  document.getElementById('memberId').addEventListener('keypress', e => {
+    if (e.key === 'Enter') searchMember();
+  });
+
+  // ── scroll reveal ──
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
-
 </body>
 </html>
