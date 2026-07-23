@@ -35,13 +35,9 @@ body{
   font-size:16px;
   overflow-x:hidden;
 }
-
-/* ── SCROLLBAR ── */
 ::-webkit-scrollbar{width:6px;}
 ::-webkit-scrollbar-track{background:var(--gray-1);}
 ::-webkit-scrollbar-thumb{background:var(--navy-light);border-radius:4px;}
-
-/* ── HEADER ── */
 header{
   position:sticky;top:0;z-index:900;
   background:var(--navy-dark);
@@ -58,16 +54,12 @@ header{
   color:#fff;font-weight:700;font-size:clamp(13px,2.8vw,16px);
   text-decoration:none;flex-shrink:0;
 }
-.logo-img{
-  width:44px;height:44px;border-radius:50%;object-fit:cover;
-  border:2px solid var(--gold-light);flex-shrink:0;
-}
 .logo-icon{
   width:44px;height:44px;border-radius:50%;flex-shrink:0;
-  background:linear-gradient(135deg,var(--gold),var(--gold-light));
   display:flex;align-items:center;justify-content:center;
-  font-size:22px;
+  overflow:hidden;background:none;box-shadow:none;
 }
+.logo-icon img{width:100%;height:100%;object-fit:cover;}
 .hamburger{
   display:none;flex-direction:column;gap:5px;
   cursor:pointer;padding:6px;border:none;background:transparent;flex-shrink:0;
@@ -76,7 +68,6 @@ header{
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 .hamburger.open span:nth-child(2){opacity:0;}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-
 nav{display:flex;gap:4px;flex-wrap:wrap;align-items:center;}
 nav a{
   text-decoration:none;color:rgba(255,255,255,0.88);
@@ -84,7 +75,6 @@ nav a{
   background:rgba(255,255,255,0.08);transition:var(--transition);white-space:nowrap;
 }
 nav a:hover{background:var(--gold);color:var(--navy-dark);transform:translateY(-1px);}
-
 @media(max-width:900px){
   .hamburger{display:flex;}
   nav{
@@ -96,8 +86,6 @@ nav a:hover{background:var(--gold);color:var(--navy-dark);transform:translateY(-
   nav.open{display:flex;}
   nav a{width:100%;text-align:center;padding:12px;font-size:15px;}
 }
-
-/* ── HERO ── */
 .hero{
   background:linear-gradient(145deg,var(--navy-dark) 0%,#174e8c 60%,#1e6bb8 100%);
   color:#fff;text-align:center;
@@ -146,8 +134,6 @@ nav a:hover{background:var(--gold);color:var(--navy-dark);transform:translateY(-
 .btn-ghost{background:var(--gray-1);color:var(--text-soft);border:1.5px solid var(--gray-2);}
 .btn-ghost:hover{background:var(--gray-2);}
 .btn-sm{padding:9px 18px;font-size:13px;}
-
-/* ── SECTIONS ── */
 .section{padding:clamp(56px,9vw,100px) 24px;max-width:1280px;margin:auto;}
 .section-bg{background:var(--gray-1);}
 .section-bg .section{padding:clamp(56px,9vw,100px) 24px;}
@@ -161,8 +147,6 @@ nav a:hover{background:var(--gold);color:var(--navy-dark);transform:translateY(-
   display:block;font-family:'Noto Sans Sinhala',sans-serif;
   font-size:clamp(14px,2.5vw,16px);font-weight:400;color:var(--text-soft);margin-top:8px;
 }
-
-/* ── ABOUT ── */
 .about-card{
   background:var(--white);border-radius:var(--radius);
   padding:clamp(24px,5vw,44px);box-shadow:var(--shadow);
@@ -170,8 +154,6 @@ nav a:hover{background:var(--gold);color:var(--navy-dark);transform:translateY(-
   font-size:clamp(15px,2.5vw,17px);line-height:2;color:var(--text-soft);
   font-family:'Noto Serif Sinhala',serif;
 }
-
-/* ── OBJECTIVES ── */
 .objectives-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));
@@ -192,8 +174,6 @@ nav a:hover{background:var(--gold);color:var(--navy-dark);transform:translateY(-
 .obj-icon{font-size:32px;margin-bottom:14px;display:block;}
 .obj-card h3{font-size:clamp(15px,2.5vw,17px);font-weight:700;color:var(--navy);margin-bottom:10px;}
 .obj-card p{font-size:clamp(13px,2vw,15px);color:var(--text-soft);line-height:1.9;}
-
-/* ── SERVICES ── */
 .services-wrap{
   background:linear-gradient(135deg,var(--navy-dark) 0%,#194d87 100%);
   padding:clamp(56px,9vw,100px) 24px;
@@ -214,8 +194,6 @@ nav a:hover{background:var(--gold);color:var(--navy-dark);transform:translateY(-
 }
 .svc-card:hover{background:rgba(201,146,42,0.25);border-color:var(--gold-light);transform:translateY(-4px);}
 .svc-icon{font-size:38px;display:block;margin-bottom:12px;}
-
-/* ── DECISIONS ── */
 .decisions-section{background:var(--gray-1);padding:clamp(56px,9vw,100px) 24px;}
 .decision-card{
   background:var(--white);border-radius:var(--radius);
@@ -243,8 +221,6 @@ nav a:hover{background:var(--gold);color:var(--navy-dark);transform:translateY(-
   transition:var(--transition);
 }
 .decision-card:hover .click-hint{background:var(--gold);}
-
-/* ── DOCUMENTS ── */
 .docs-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));
@@ -265,8 +241,6 @@ nav a:hover{background:var(--gold);color:var(--navy-dark);transform:translateY(-
   padding:4px 12px;border-radius:999px;font-size:12px;font-weight:700;
   background:var(--gray-1);color:var(--text-soft);
 }
-
-/* ── COMMITTEE ── */
 .committee-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));
@@ -290,7 +264,6 @@ nav a:hover{background:var(--gold);color:var(--navy-dark);transform:translateY(-
   color:var(--gold);margin-bottom:5px;
 }
 .member-name{font-size:clamp(13px,2vw,14px);font-weight:700;color:var(--navy);}
-
 .committee-members-grid{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr));
@@ -311,16 +284,11 @@ nav a:hover{background:var(--gold);color:var(--navy-dark);transform:translateY(-
 }
 .committee-member-info .role{font-size:11px;color:var(--gold);font-weight:700;}
 .committee-member-info .name{font-size:13px;font-weight:700;color:var(--navy);}
-
 .group-photo-box{
   background:var(--gray-1);border-radius:var(--radius);border:3px dashed var(--gray-3);
   padding:clamp(30px,6vw,56px) clamp(20px,4vw,40px);
   text-align:center;margin-bottom:48px;
 }
-.group-photo-box .photo-icon{font-size:56px;display:block;margin-bottom:14px;opacity:0.5;}
-.group-photo-box p{color:var(--gray-3);font-size:15px;}
-
-/* ── PORTAL ── */
 .portal-section{background:var(--gray-1);padding:clamp(56px,9vw,100px) 24px;}
 .portal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:28px;max-width:1280px;margin:0 auto;}
 .portal-box{
@@ -341,7 +309,6 @@ nav a:hover{background:var(--gold);color:var(--navy-dark);transform:translateY(-
   outline:none;transition:var(--transition);color:var(--text);
 }
 .portal-input-wrap input:focus{border-color:var(--navy-light);}
-
 #result{margin-top:20px;}
 .member-header{
   display:flex;align-items:center;gap:14px;
@@ -370,7 +337,6 @@ tr:hover td{background:#fafcff;}
 .pill-paid{background:#d1fae5;color:#065f46;}
 .pill-due{background:#fee2e2;color:#991b1b;}
 .error-box{background:#fff5f5;border:1.5px solid #fecaca;border-radius:var(--radius-sm);padding:16px 20px;color:#991b1b;font-weight:600;text-align:center;}
-
 .join-box{text-align:center;}
 .join-icon{font-size:48px;margin-bottom:16px;display:block;}
 .join-box p{color:var(--text-soft);font-size:15px;line-height:1.9;margin-bottom:24px;}
@@ -380,7 +346,6 @@ tr:hover td{background:#fafcff;}
   font-size:14px;color:var(--text-soft);line-height:1.9;
 }
 .join-info strong{color:var(--navy);}
-
 .bank-info{
   background:linear-gradient(135deg,#eef6ff,#f0f9ff);
   border:1.5px solid var(--gray-2);border-radius:var(--radius-sm);
@@ -389,34 +354,50 @@ tr:hover td{background:#fafcff;}
 .bank-info h4{color:var(--navy);font-size:15px;font-weight:700;margin-bottom:12px;}
 .bank-info p{font-size:14px;color:var(--text-soft);line-height:2;}
 .bank-info strong{color:var(--navy);}
-
-/* ── GALLERY ── */
-.gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));
-  gap:18px;
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+  gap: 18px;
 }
-.gallery-item{
-  background:var(--white);border-radius:var(--radius);
-  overflow:hidden;box-shadow:var(--shadow);transition:var(--transition);
+.gallery-item {
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
 }
-.gallery-item:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
-.gallery-placeholder{
-  width:100%;height:180px;
-  background:linear-gradient(135deg,var(--gray-2),var(--gray-1));
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:10px;color:var(--gray-3);font-size:14px;
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
 }
-.gallery-placeholder .ph-icon{font-size:40px;}
-.gallery-caption{padding:14px 16px;}
-.gallery-caption h4{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:4px;}
-.gallery-caption p{font-size:12px;color:var(--text-soft);}
-
-/* ── CONTACT ── */
+.gallery-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  width: 100%;
+  height: 180px;
+}
+.gallery-slider::-webkit-scrollbar { display: none; }
+.gallery-slider img {
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  object-fit: cover;
+  cursor: pointer;
+}
+.gallery-caption { padding: 14px 16px; }
+.gallery-caption h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+.gallery-caption p { font-size: 12px; color: var(--text-soft); }
 .contact-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));
   gap:28px;
+  max-width:1280px;
+  margin:auto;
+  padding:clamp(56px,9vw,100px) 24px;
 }
 .contact-info-card{
   background:var(--white);border-radius:var(--radius);
@@ -440,26 +421,11 @@ tr:hover td{background:#fafcff;}
 .contact-item .value{font-size:15px;color:var(--text);font-weight:600;}
 .contact-item a{color:var(--navy-light);text-decoration:none;}
 .contact-item a:hover{color:var(--gold);}
-
 .map-box{
   background:var(--white);border-radius:var(--radius);
   overflow:hidden;box-shadow:var(--shadow);min-height:300px;
   display:flex;flex-direction:column;
 }
-.map-link{
-  flex:1;background:var(--gray-1);display:flex;flex-direction:column;
-  align-items:center;justify-content:center;gap:14px;padding:32px;
-  text-align:center;text-decoration:none;transition:var(--transition);
-}
-.map-link:hover{background:var(--gray-2);}
-.map-link .map-icon{font-size:48px;}
-.map-link p{color:var(--text-soft);font-size:15px;line-height:1.8;}
-.map-link .map-btn{
-  background:var(--navy);color:#fff;padding:11px 22px;border-radius:999px;
-  font-size:14px;font-weight:700;font-family:inherit;
-}
-
-/* ── MODAL ── */
 .modal-overlay{
   display:none;position:fixed;inset:0;z-index:9999;
   background:rgba(7,42,77,0.72);backdrop-filter:blur(4px);
@@ -497,12 +463,8 @@ tr:hover td{background:#fafcff;}
 }
 .modal-body ul li strong{color:var(--navy);display:block;font-size:15px;margin-bottom:6px;}
 .modal-footer{padding:18px 28px;border-top:1px solid var(--gray-2);display:flex;justify-content:flex-end;flex-shrink:0;}
-
-/* ── REVEAL ── */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease;}
 .reveal.active{opacity:1;transform:translateY(0);}
-
-/* ── FOOTER ── */
 footer{
   background:var(--navy-dark);color:rgba(255,255,255,0.7);
   text-align:center;padding:32px 20px;font-size:14px;
@@ -513,26 +475,35 @@ footer .footer-inner{max-width:800px;margin:auto;}
 footer .footer-logo{font-size:22px;font-weight:700;color:var(--gold-light);font-family:'Noto Serif Sinhala',serif;margin-bottom:10px;}
 footer a{color:var(--gold-light);text-decoration:none;}
 footer a:hover{text-decoration:underline;}
-
+.document-modal{max-width:650px;}
+.document-summary-box{background:#f7fafd;border-left:5px solid var(--gold);padding:20px;border-radius:12px;margin-bottom:25px;}
+.document-summary-box h3{color:var(--navy);margin-bottom:12px;}
+.document-summary-box p{line-height:1.9;}
+.pdf-view-btn{display:flex;justify-content:center;align-items:center;width:100%;padding:16px;border-radius:12px;text-decoration:none;font-weight:700;background:var(--navy);color:#fff;}
+.info-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);align-items:center;justify-content:center;z-index:9999;}
+.info-modal-content{background:#fff;padding:24px;border-radius:18px;max-width:520px;width:92%;position:relative;}
+.info-close{position:absolute;top:8px;right:12px;border:none;background:none;font-size:28px;cursor:pointer;}
 @media(max-width:600px){
   .portal-input-wrap{flex-direction:column;}
   .portal-input-wrap input,.btn{width:100%;}
   .hero-cta{flex-direction:column;align-items:center;}
+  .header-inner{padding:10px 12px !important;}
+  .logo span{font-size:18px !important;font-weight:700 !important;letter-spacing:0.5px;white-space:nowrap;}
+  .logo-icon{width:38px !important;height:38px !important;margin-right:6px !important;}
+  .hero h1.main-hero-title{font-size:36px !important;line-height:1.2 !important;font-weight:800 !important;margin-bottom:15px !important;letter-spacing:-0.5px !important;}
+  .hero h1.main-hero-title span{font-size:42px !important;display:inline-block;margin-bottom:4px;}
+  .hero p{font-size:15px !important;line-height:1.5 !important;padding:0 10px;}
 }
-
-.info-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);align-items:center;justify-content:center;z-index:9999}
-.info-modal-content{background:#fff;padding:24px;border-radius:18px;max-width:520px;width:92%;position:relative}
-.info-close{position:absolute;top:8px;right:12px;border:none;background:none;font-size:28px;cursor:pointer}
-
 </style>
 </head>
 <body>
 
-<!-- ── HEADER ── -->
 <header>
   <div class="header-inner">
     <a class="logo" href="#home">
-      <div class="logo-icon">🏛️</div>
+      <div class="logo-icon">
+        <img src="https://lh3.googleusercontent.com/d/1OBXoYWEFt_lmXR2Qlmtz7LCC9i99Ba2k" alt="Miriswatta Ape Gama Logo">
+      </div>
       <span>මිරිස්වත්ත අපේ ගම</span>
     </a>
     <button class="hamburger" id="hamburger" aria-label="menu">
@@ -551,13 +522,12 @@ footer a:hover{text-decoration:underline;}
   </div>
 </header>
 
-<!-- ── HERO ── -->
 <section class="hero" id="home">
   <div class="hero-pattern"></div>
   <div class="hero-content">
-    <div class="hero-badge">🌿 ශ්‍රී ලංකාව · පිළියන්දල</div>
-    <h1>🏛️ <span>මිරිස්වත්ත</span><br>අපේ ගම එකමුතුව</h1>
-    <p>එකමුතුවෙන් ගමේ සංවර්ධනය කරමු — ප්‍රජා බලය ඔස්සේ නව ශ්‍රී ලංකාවක් ගොඩනගමු</p>
+    <div class="hero-badge">ශ්‍රී ලංකාව · පිළියන්දල</div>
+    <h1 class="main-hero-title"><span>මිරිස්වත්ත</span><br>අපේ ගම එකමුතුව</h1>
+    <p>එකමුතුවෙන් ගම සංවර්ධනය කරමු — ප්‍රජා බලය ඔස්සේ නව ශ්‍රී ලංකාවක් ගොඩනගමු</p>
     <div class="hero-cta">
       <a href="#portal" class="btn btn-gold">💳 සාමාජික පියස</a>
       <a href="https://forms.gle/FdtpB4MKMPhybQp37" target="_blank" class="btn btn-outline">📝 ලියාපදිංචි වන්න</a>
@@ -565,39 +535,91 @@ footer a:hover{text-decoration:underline;}
   </div>
 </section>
 
-<!-- ── ABOUT ── -->
+<!-- ABOUT -->
 <section class="section reveal" id="about">
   <h2 class="section-title">📖 අප <span>ගැන</span><span class="sub">සංවිධානය සහ අරමුණු</span></h2>
+  
   <div class="about-card" style="margin-bottom:40px;">
-    මිරිස්වත්ත අපේ ගම එකමුතුව යනු ගමේ ජනතාව එකමුතුවෙන් සමාජීය හා සංවර්ධන කටයුතු සඳහා කැපවූ ගරුත්වාත්මක සංවිධානයකි. ලිපිනය: <strong>අංක 67, කොට්ටාව පාර, මිරිස්වත්ත, පිළියන්දල.</strong> අපගේ ප්‍රධාන අරමුණ වන්නේ ප්‍රදේශයේ සෑම ගම්වාසියකුටම ශක්තිමත් ප්‍රජා සහයෝගයක් සහ සුභසාධනයක් ලබාදීමයි. සාමාජිකයකු මිය ගිය අවස්ථාවකදී රු. 20,000/= ක ප්‍රතිපාදනයක් ලබාදීම අපගේ ප්‍රධාන සේවාවකි.
+    🤝 ප්‍රදේශයේ ජනතාවගේ අන්‍යෝන්‍ය සබැඳියාව සහ සුබසාධනය උදෙසා, <strong>2023 ජූලි මස 08 වන දින මිරිස්වත්ත සුසිරි මංගල ශාලාවේදී</strong> එකතු වූ අප ප්‍රදේශයේ සියයකට අධික පිරිසක් ඒකරාශී වී පිහිටුවා ගන්නා ලද සමිතිය <strong>"මිරිස්වත්ත අපේ ගමේ එකමුතුව"</strong> නමින් හැඳින්වේ. 
+    <br><br>
+    අපගේ ප්‍රධාන අරමුණ වන්නේ සාමාජිකයන්ගේ සමාජ සුබසාධන කටයුතු සහ මානව අවශ්‍යතාවයන් ඉටු කරමින්, එකිනෙකාට ශක්තියක් වන ස්ථාවර ජන පවුරක් ලෙස නැගී සිටීමයි. ✨
   </div>
+
   <div class="objectives-grid">
-    <div class="obj-card"><span class="obj-icon">🤝</span><h3 onclick="openInfoModal('ප්‍රජා සංවර්ධනය සහ එකමුතුකම')" style="cursor:pointer;">ප්‍රජා සංවර්ධනය සහ එකමුතුකම</h3><p>ප්‍රදේශයේ සියලුම ගම්වාසීන් අතර සුහදතාවය, සහයෝගීතාවය සහ සහෝදරත්වය වර්ධනය කිරීම.</p></div>
-    <div class="obj-card"><span class="obj-icon">💙</span><h3 onclick="openInfoModal('සාමාජික සුභසාධනය')" style="cursor:pointer;">සාමාජික සුභසාධනය</h3><p>සාමාජිකයන්ගේ සහ ඔවුන්ගේ පවුල්වල සාමාජිකයන්ගේ සුභසාධනය වෙනුවෙන් විවිධ වැඩසටහන් ක්‍රියාත්මක කිරීම.</p></div>
-    <div class="obj-card"><span class="obj-icon">🏛️</span><h3 onclick="openInfoModal('දුෂ්කර අවස්ථාවලදී සහන')" style="cursor:pointer;">දුෂ්කර අවස්ථාවලදී සහන</h3><p>අවමංගල්‍ය අවස්ථාවකදී රු. 20,000/= ක මූල්‍ය ප්‍රතිපාදන ඇතුළු අවශ්‍ය සහාය ලබාදීම.</p></div>
-    <div class="obj-card"><span class="obj-icon">🌱</span><h3 onclick="openInfoModal('ළමා හා තරුණ අභිවර්ධනය')" style="cursor:pointer;">ළමා හා තරුණ අභිවර්ධනය</h3><p>ගමේ දරුවන්ගේ අධ්‍යාපනික, ක්‍රීඩා සහ සංස්කෘතික දක්ෂතා ඔප්නැංවීම.</p></div>
-    <div class="obj-card"><span class="obj-icon">🏡</span><h3 onclick="openInfoModal('පොදු පහසුකම් සංවර්ධනය')" style="cursor:pointer;">පොදු පහසුකම් සංවර්ධනය</h3><p>ප්‍රදේශයේ පොදු අවශ්‍යතා, පරිසර සංරක්ෂණ කටයුතු සහ ආගමික/සමාජීය උත්සව සංවිධානය කිරීම.</p></div>
+    
+    <div class="obj-card" onclick="openInfoModal('ප්‍රජා සංවර්ධනය සහ එකමුතුකම')" style="cursor:pointer;">
+      <span class="obj-icon">🤝</span>
+      <h3>ප්‍රජා සංවර්ධනය සහ එකමුතුකම</h3>
+      <p>ප්‍රදේශයේ සියලු ම ගම්වාසීන් අතර අන්‍යෝන්‍ය සුහදතාවය, ශක්තිමත් සහයෝගීතාවය සහ සහෝදරත්වය වර්ධනය කිරීම.</p>
+    </div>
+
+    <div class="obj-card" onclick="openInfoModal('සාමාජික සුභසාධනය')" style="cursor:pointer;">
+      <span class="obj-icon">💙</span>
+      <h3>සාමාජික සුභසාධනය</h3>
+      <p>සාමාජිකයන්ගේ සහ ඔවුන්ගේ පවුල්වල සාමාජිකයන්ගේ සුභසාධනය වෙනුවෙන් විවිධ වැඩසටහන් ක්‍රියාත්මක කිරීම.</p>
+    </div>
+
+    <div class="obj-card" onclick="openInfoModal('දුෂ්කර අවස්ථාවලදී සහන')" style="cursor:pointer;">
+      <span class="obj-icon">🏛️</span>
+      <h3>දුෂ්කර අවස්ථාවලදී සහන</h3>
+      <p>ආර්ථික මෙන්ම වෙනත් දුෂ්කර අවස්ථාවලදී එම දුෂ්කරතා සමනය කර ගැනීම සඳහා පිටුවහලක් ලබාදීම.</p>
+    </div>
+
+    <div class="obj-card" onclick="openInfoModal('ළමා හා තරුණ අභිවර්ධනය')" style="cursor:pointer;">
+      <span class="obj-icon">🌱</span>
+      <h3>ළමා හා තරුණ අභිවර්ධනය</h3>
+      <p>සාමාජික පවුල්වල සිටින ළමා හා තරුණ අය සඳහා එකමුතුව තුළින් වැඩි අවස්ථාවන් ලබා දීම.</p>
+    </div>
+
+    <div class="obj-card" onclick="openInfoModal('පොදු පහසුකම් සංවර්ධනය')" style="cursor:pointer;">
+      <span class="obj-icon">🏡</span>
+      <h3>පොදු පහසුකම් සංවර්ධනය</h3>
+      <p>ආගමික, සංස්කෘතික සහ සාම්ප්‍රදායික කටයුතුවලදී ප්‍රදේශයේ ජනතාවට යහපතක් වන ලෙස කටයුතු කිරීම.</p>
+    </div>
+
   </div>
 </section>
 
-<!-- ── SERVICES ── -->
+<!-- SERVICES -->
 <div class="services-wrap reveal" id="services">
   <div class="services-inner">
     <h2 class="section-title">✨ <span onclick="openInfoModal('අපගේ සේවා')" style="cursor:pointer;">අපගේ සේවා</span><span class="sub">ප්‍රජාවට ලබාදෙන සේවා ද්‍රව්‍ය</span></h2>
+    
     <div class="services-grid">
-      <div class="svc-card"><span class="svc-icon">🌱</span>ග්‍රාම සංවර්ධන වැඩසටහන්</div>
-      <div class="svc-card"><span class="svc-icon">🎓</span>අධ්‍යාපනික සහය</div>
-      <div class="svc-card"><span class="svc-icon">🤝</span>සමාජ සේවා වැඩසටහන්</div>
-      <div class="svc-card"><span class="svc-icon">🏥</span>සෞඛ්‍ය සහ සුභසාධනය</div>
-      <div class="svc-card"><span class="svc-icon">🎭</span>සංස්කෘතික උත්සව</div>
-      <div class="svc-card"><span class="svc-icon">💰</span>ණය ව්‍යාපෘතිය</div>
+      <!-- CARD 1 -->
+      <div class="svc-card" onclick="openInfoModal('ග්‍රාම සංවර්ධනය')" style="cursor:pointer;">
+        <span class="svc-icon">🌱</span>ග්‍රාම සංවර්ධනය
+      </div>
+      
+      <!-- CARD 2 -->
+      <div class="svc-card" onclick="openInfoModal('අධ්‍යාපනික සහය')" style="cursor:pointer;">
+        <span class="svc-icon">🎓</span>අධ්‍යාපනික සහය
+      </div>
+      
+      <!-- CARD 3 -->
+      <div class="svc-card" onclick="openInfoModal('සෞඛ්‍ය සුභසාධනය')" style="cursor:pointer;">
+        <span class="svc-icon">🏥</span>සෞඛ්‍ය සුභසාධනය
+      </div>
+      
+      <!-- CARD 4 -->
+      <div class="svc-card" onclick="openInfoModal('සංස්කෘතික කටයුතු')" style="cursor:pointer;">
+        <span class="svc-icon">🎭</span>සංස්කෘතික කටයුතු
+      </div>
+      
+      <!-- CARD 5 -->
+      <div class="svc-card" onclick="openInfoModal('මූල්‍ය ව්‍යාපෘති')" style="cursor:pointer;">
+        <span class="svc-icon">💰</span>මූල්‍ය ව්‍යාපෘති
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="svc-card" onclick="openInfoModal('අපගේ සේවා')" style="cursor:pointer;">
+        <span class="svc-icon">📋</span>සියලුම සේවාවන්
+      </div>
     </div>
+    
   </div>
 </div>
-
-
-
-<!-- ── DECISIONS SECTION ── -->
+<!-- DECISIONS -->
 <div class="decisions-section reveal" id="decisions">
   <div style="max-width:1280px;margin:auto;">
     <h2 class="section-title">📢 කාරක සභා <span>තීරණ</span><span class="sub">2026-05-24 දින රැස්වීම</span></h2>
@@ -617,54 +639,58 @@ footer a:hover{text-decoration:underline;}
   </div>
 </div>
 
-<!-- ── DOCUMENTS ── -->
+<!-- DOCUMENTS -->
 <section class="section reveal" id="documents">
   <h2 class="section-title">📄 ලිපි <span>ලේඛන</span><span class="sub">සංවිධානයේ නිල ලිපි ලේඛන</span></h2>
   <div class="docs-grid">
-    <div class="doc-card" onclick="openModal('constitutionModal')">
+    <div class="doc-card" onclick="openDocModal('සංශෝධිත ව්‍යවස්ථාව','සංවිධානයේ සංශෝධිත ව්‍යවස්ථාව, අරමුණු, සාමාජිකත්ව නීති සහ පරිපාලන ක්‍රමවේද ඇතුළත් නිල ලේඛනය.','https://drive.google.com/file/d/1SyREeL26t6Iu-3qfG4oamTjpKrgCW96D/view?usp=sharing')">
       <span class="doc-icon">📜</span>
-      <h3>සමිති ව්‍යවස්ථාව</h3>
-      <p>සංශෝධිත ව්‍යවස්ථාව</p>
+      <h3>සංශෝධිත ව්‍යවස්ථාව</h3>
+      <p>නිල ලේඛනය</p>
       <span class="doc-badge">👆 ක්ලික් කරන්න</span>
     </div>
-    <div class="doc-card" onclick="openModal('annualModal')">
+    <div class="doc-card" onclick="openDocModal('සුබසාධක සමිතියේ අරමුදල් වාර්තාව','සාමාජිකයන්ගේ සමාජ සුබසාධන, හදිසි සහන සහ ප්‍රජා සංවර්ධන කටයුතු වෙනුවෙන් වෙන්වූ නිල අරමුදල් වාර්තාව.','https://drive.google.com/file/d/1B3554rAk4AGsUmMfDq0big6QxhVuwpp2/view?usp=drive_link')">
       <span class="doc-icon">📊</span>
-      <h3>වාර්ෂික වාර්තා</h3>
-      <p>2024/2025 සාමාන්‍ය රැස්වීම</p>
+      <h3>සුබසාධක සමිතියේ අරමුදල් වාර්තාව</h3>
+      <p>නිල වාර්තාව</p>
       <span class="doc-badge">👆 ක්ලික් කරන්න</span>
     </div>
-    <div class="doc-card" onclick="openModal('minutesModal')">
-      <span class="doc-icon">📋</span>
-      <h3>රැස්වීම් වාර්තා</h3>
-      <p>Minutes of Meetings</p>
-      <span class="doc-badge">👆 ක්ලික් කරන්න</span>
-    </div>
-    <div class="doc-card" onclick="openModal('lotteryModal')">
+    <div class="doc-card" onclick="openDocModal('මිරිස්වත්ත තරුණ හා ළමා ඒකාබද්ධ සංසදය','ප්‍රදේශයේ ළමා හා තරුණ පරපුරේ අධ්‍යාපනික, කුසලතා සහ සහජ දක්ෂතා ඔප්නැංවීම උදෙසා පිහිටුවන ලද ඒකාබද්ධ සංසදයේ නිල ව්‍යවස්ථා කෙටුම්පත.','https://drive.google.com/file/d/1FcfiMSRoDtjm1d5QNBheo___djOUKaVj/view?usp=drive_link')">
       <span class="doc-icon">🎟️</span>
-      <h3>රු. 50,000 සීට්ටු ලේඛනය</h3>
-      <p>සාමාජික ත්‍යාග ක්‍රමය</p>
+      <h3>මිරිස්වත්ත තරුණ හා ළමා ඒකාබද්ධ සංසදය කෙටුම්පත</h3>
+      <p>නිල වාර්තාව</p>
+      <span class="doc-badge">👆 ක්ලික් කරන්න</span>
+    </div>
+    <div class="doc-card" onclick="openDocModal('ණය අරමුදල ව්‍යවස්ථා කෙටුම්පත','සාමාජිකයන්ගේ අන්‍යෝන්‍ය ණය අරමුදල් පරිපාලනය සහ ප්‍රතිලාභ බෙදාහැරීම පිළිබඳ නිල ව්‍යවස්ථා කෙටුම්පත.','https://drive.google.com/file/d/1kmarLZaz9wYdWPVd4gRwy7Rl2NFdR63A/view?usp=drive_link')">
+      <span class="doc-icon">📋</span>
+      <h3>ණය අරමුදල ව්‍යවස්ථා කෙටුම්පත</h3>
+      <p>නිල කාරක සභා ලේඛනය</p>
+      <span class="doc-badge">👆 ක්ලික් කරන්න</span>
+    </div>
+    <div class="doc-card" onclick="openDocModal('දන්සැල සහ ආධාර මුදල් වාර්තාව','දන්සැල්, පරිත්‍යාග සහ ආධාර මුදල් ලැබීම් හා වියදම් ඇතුළත් මූල්‍ය වාර්තාව.','https://drive.google.com/file/d/1Oq8oF7yjzacvVWyIIzTpq8K4tSPGf38s/view?usp=drive_link')">
+      <span class="doc-icon">🍚</span>
+      <h3>ආධාර මුදල් පරිත්‍යාග වාර්තාව</h3>
+      <p>මූල්‍ය හා දායකත්ව වාර්තාව</p>
       <span class="doc-badge">👆 ක්ලික් කරන්න</span>
     </div>
   </div>
 </section>
 
-<!-- ── PORTAL ── -->
+<!-- PORTAL -->
 <div class="portal-section reveal" id="portal">
   <h2 class="section-title" style="max-width:1280px;margin-left:auto;margin-right:auto;">💳 සාමාජික <span>පියස</span><span class="sub">ලියාපදිංචිය, ගෙවීම් සොයා ගැනීම සහ ඔන්ලයින් ගෙවීම</span></h2>
   <div class="portal-grid">
-    <!-- Search -->
     <div class="portal-box">
       <div class="portal-box-title">🔍 ගෙවීම් සොයා ගැනීම</div>
       <div class="portal-box-sub">ඔබගේ සාමාජික අංකය ඇතුලත් කර ගෙවීම් තත්ත්වය බලන්න</div>
       <div class="portal-label">සාමාජික අංකය (1 - 176)</div>
       <div class="portal-input-wrap">
-        <input id="memberId" type="number" placeholder="උදා: 1, 18, 50 …" min="1" max="176">
+        <input id="memberSearchId" type="number" placeholder="උදා: 1, 18, 50 …" min="1" max="176">
         <button class="btn btn-navy" onclick="searchMember()">🔍 සොයන්න</button>
         <button class="btn btn-ghost btn-sm" onclick="resetSearch()">✕</button>
       </div>
       <div id="result"></div>
     </div>
-    <!-- Join -->
     <div class="portal-box">
       <div class="portal-box-title">📝 ලියාපදිංචිය සහ ගෙවීම</div>
       <div class="portal-box-sub">නව සාමාජිකත්වය හා ගෙවීම් ක්‍රමය</div>
@@ -672,134 +698,423 @@ footer a:hover{text-decoration:underline;}
         <span class="join-icon">🏘️</span>
         <div class="join-info">
           <strong>නව ලියාපදිංචිය:</strong><br>
-          ඔබේ පවුල ලියාපදිංචි කරගෙන අපගේ ප්‍රජාවේ කොටස් කාරයෙකු වන්න. ලියාපදිංචි වීම සම්පූර්ණයෙන්ම නොමිලේ.
+          ඔබේ පවුල ලියාපදිංචි කරගෙන අපගේ ප්‍රජාවේ කොටස් කාරයෙකු වන්න.
         </div>
         <a href="https://forms.gle/FdtpB4MKMPhybQp37" target="_blank" class="btn btn-gold" style="width:100%;justify-content:center;margin-bottom:24px;">📝 ලියාපදිංචි වීමේ පෝරමය</a>
-        <div class="bank-info">
-          <h4>🏦 ගෙවීම් කරන ආකාරය</h4>
-          <p>
-            <strong>ගෙවිය යුතු මාසික ගාස්තුව:</strong> රු. 100/=<br>
-            <strong>බැංකු ගිණුම:</strong> [ගිණුම් අංකය ඇතුලත් කරන්න]<br>
-            <strong>ශාඛාව:</strong> [ශාඛාව ඇතුලත් කරන්න]<br><br>
-            බැංකු මාරු කිරීමෙන් පසු රිසිට් පත ඡායාරූපයක් ගෙන පහත ඔබ්බූ Google Form හරහා ඉදිරිපත් කරන්න.
+        <div class="bank-info" style="background:#f9f9f9;padding:15px;border-radius:8px;border-left:4px solid #fdbb2d;margin-bottom:20px;">
+          <h4 style="margin-top:0;color:#1a2a6c;">🏦 ගෙවීම් කරන ආකාරය</h4>
+          <p style="font-size:14px;line-height:1.6;margin-bottom:0;">
+            <strong>ගෙවිය යුතු මාසික ගාස්තුව:</strong> රු.500/=<br>
+            <strong>බැංකුව:</strong> [ මහජන බැංකුව ]<br>
+            <strong>ශාඛාව:</strong> [ පිළියන්දල ]<br>
+            <strong>බැංකු ගිණුම:</strong> [ 359100150008835 ]<br>
+            <strong>බැංකු ගිණුමේ නම:</strong> [ මිරිස්වත්ත අපේ ගම එකමුතුව ]<br>
+            මුදල් ගෙවු පසු රිසිට් පත ඡායාරූපයක් හෝ PDF එකක් ගෙන පහත පෝරමය මඟින් සෘජුවම ඉදිරිපත් කරන්න.
           </p>
         </div>
-        <a href="https://forms.gle/FdtpB4MKMPhybQp37" target="_blank" class="btn btn-navy btn-sm" style="width:100%;justify-content:center;">📤 රිසිට් ඉදිරිපත් කරන්න</a>
+        <div style="background:#ffffff;border:1px solid #e0e0e0;padding:20px;border-radius:10px;box-shadow:0 4px 6px rgba(0,0,0,0.05);">
+          <h4 style="margin-top:0;color:#1a2a6c;text-align:center;margin-bottom:15px;">📤 රිසිට් පත මෙතැනින් උඩුගත කරන්න</h4>
+          <div id="receiptForm">
+            <div style="margin-bottom:12px;">
+              <label style="display:block;margin-bottom:5px;font-weight:600;font-size:13px;color:#555;">සාමාජිකයාගේ නම:</label>
+              <input type="text" id="memberName" placeholder="ඔබේ සම්පූර්ණ නම" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:6px;box-sizing:border-box;font-family:inherit;">
+            </div>
+            <div style="margin-bottom:12px;">
+              <label style="display:block;margin-bottom:5px;font-weight:600;font-size:13px;color:#555;">සාමාජික අංකය:</label>
+              <input type="text" id="memberFormId" placeholder="උදා: 001" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:6px;box-sizing:border-box;font-family:inherit;">
+            </div>
+            <div style="margin-bottom:12px;">
+              <label style="display:block;margin-bottom:5px;font-weight:600;font-size:13px;color:#555;">දුරකථන අංකය:</label>
+              <input type="text" id="memberPhone" placeholder="07XXXXXXXX" style="width:100%;padding:10px;border:1px solid #ccc;border-radius:6px;box-sizing:border-box;font-family:inherit;">
+            </div>
+            <div style="margin-bottom:15px;">
+              <label style="display:block;margin-bottom:5px;font-weight:600;font-size:13px;color:#555;">ගෙවීම් රිසිට්පත (ඡායාරූපය/PDF):</label>
+              <input type="file" id="receiptFile" accept="image/*,application/pdf" style="width:100%;padding:8px;border:1px solid #ccc;border-radius:6px;box-sizing:border-box;background:#fcfcfc;">
+            </div>
+            <button type="button" id="submitBtn" onclick="submitReceipt()" style="width:100%;background-color:#1a2a6c;color:white;padding:12px;border:none;border-radius:6px;font-size:15px;font-weight:bold;cursor:pointer;transition:all 0.3s;font-family:inherit;">දත්ත ඇතුළත් කරන්න 🚀</button>
+          </div>
+          <div id="uploadMessage" style="margin-top:15px;padding:10px;border-radius:6px;text-align:center;font-weight:bold;font-size:14px;display:none;"></div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ── GALLERY ── -->
+<!-- GALLERY -->
 <section class="section reveal" id="gallery">
-  <h2 class="section-title">📸 ඡායාරූප <span>ගැලරිය</span><span class="sub">ගමේ විශේෂ සිදුවීම්</span></h2>
+  <h2 class="section-title">📸 අපේ <span>මතකයන්</span><span class="sub">සමිති ක්‍රියාකාරකම් සහ විශේෂ අවස්ථා</span></h2>
+  
   <div class="gallery-grid">
-    <div class="gallery-item">
-      <div class="gallery-placeholder"><span class="ph-icon">🎊</span><span>ඡායාරූපය</span></div>
-      <div class="gallery-caption"><h4>අවුරුදු සන්නකෙළිය 2025</h4><p>ගමේ ඇවෙරිදා සැමරීම</p></div>
-    </div>
-    <div class="gallery-item">
-      <div class="gallery-placeholder"><span class="ph-icon">🌿</span><span>ඡායාරූපය</span></div>
-      <div class="gallery-caption"><h4>ශ්‍රමදාන</h4><p>ගමේ පරිසර ශ්‍රමදාන</p></div>
-    </div>
-    <div class="gallery-item">
-      <div class="gallery-placeholder"><span class="ph-icon">🪔</span><span>ඡායාරූපය</span></div>
-      <div class="gallery-caption"><h4>වෙසක් සැමරීම</h4><p>දහම් සාකච්ඡා සහ කූඩු</p></div>
-    </div>
-    <div class="gallery-item">
-      <div class="gallery-placeholder"><span class="ph-icon">🏆</span><span>ඡායාරූපය</span></div>
-      <div class="gallery-caption"><h4>ක්‍රීඩා සැණකෙළිය</h4><p>ත්‍යාග ලබා දීමේ අවස්ථාව</p></div>
-    </div>
-    <div class="gallery-item">
-      <div class="gallery-placeholder"><span class="ph-icon">🤲</span><span>ඡායාරූපය</span></div>
-      <div class="gallery-caption"><h4>සාමාජික රැස්වීම</h4><p>ත්‍රෛමාසික සාමාන්‍ය රැස්වීම</p></div>
-    </div>
-    <div class="gallery-item">
-      <div class="gallery-placeholder"><span class="ph-icon">🌙</span><span>ඡායාරූපය</span></div>
-      <div class="gallery-caption"><h4>පොසොන් දන්සැල</h4><p>ආගමික කටයුතු</p></div>
+    
+<!-- 01 වන කාඩ්පත: නව සමිති ශාලාව විවෘත කිරීම -->
+<div class="gallery-item" style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.05); background: #fff;">
+  <!-- ඡායාරූප විනිවිදක (Image Slider) -->
+  <div class="gallery-slider">
+    <img src="https://lh3.googleusercontent.com/d/1uDs7Ap1ar7oNI6hKkeExqVweq_Zvmykp" alt="නව සමිති ශාලාව විවෘත කිරීම - පින්තූරය 1" onclick="openInfoModal('නව සමිති ශාලා ගොඩනැගිල්ල විවෘත කිරීම')">
+    <img src="https://lh3.googleusercontent.com/d/1e4DoolYRxdur3zbkwQO3uP8fHqFHaabd" alt="නව සමිති ශාලාව විවෘත කිරීම - පින්තූරය 2" onclick="openInfoModal('නව සමිති ශාලා ගොඩනැගිල්ල විවෘත කිරීම')">
+    <img src="https://lh3.googleusercontent.com/d/1P_jt4DAcUF88N2ogSFnfl25AOzkrxNjX" alt="නව සමිති ශාලාව විවෘත කිරීම - පින්තූරය 3" onclick="openInfoModal('නව සමිති ශාලා ගොඩනැගිල්ල විවෘත කිරීම')">
+  </div>
+  <!-- විස්තර ඇතුළත් කොටස -->
+  <div class="gallery-details" style="padding: 20px; text-align: left;">
+    <h3 style="margin: 0 0 10px 0; color: #2c3e50; font-size: 1.25rem; font-weight: bold;">නව සමිති ශාලා ගොඩනැගිල්ල විවෘත කිරීමේ උත්සවය</h3>
+    <p style="margin: 0 0 15px 0; font-size: 0.95rem; color: #555; line-height: 1.6; text-align: justify;">
+      "අපේ ගම එකමුතුව" සාමාජික සාමාජිකාවන්ගේ නොමඳ කැපවීම, ශ්‍රම දායකත්වය මෙන්ම ගොඩනැගිල්ල පරිත්‍යාග කළ සරත් කුමාර මහතා, සුමන රණවීර මහතා ඇතුළු සියලු පිංවතුන්ගේ ත්‍යාගශීලී පරිත්‍යාගයන්ගෙන් ඉදිවුණු අපගේ නව සමිති ශාලා ගොඩනැගිල්ල විවෘත කරන ලද මංගල අවස්ථාව. නොවැම්බර් 07 වන දින සෙත් පිරිත් සජ්ඣායනාවෙන් සහ 08 වන දින සංඝගත දක්ෂිණාවෙන් අනතුරුව ඉතා චාම් ලෙස මෙම විවෘත කිරීම සිදු කෙරිණි. මෙලෙස අප සැමට ප්‍රයෝජනවත් වන මෙම උදාර කාර්යය සාර්ථක කර ගැනීමට විවිධ අයුරින් මූල්‍යමය හා ද්‍රව්‍යමය ආධාර උපකාර කළ සියලුම පින්වතුන්ට අපගේ හෘදයාංගම <strong>ගෞරවනීය ස්තූතිය</strong> මෙයින් පුද කර සිටිමු!
+    </p>
+    <div class="event-date" style="font-size: 0.85rem; color: #7f8c8d; font-weight: bold; border-top: 1px solid #eee; padding-top: 10px; display: flex; align-items: center;">
+      📅 දිනය: <span style="color: #e74c3c; margin-left: 5px;">2025/11/07 - 2025/11/08</span>
     </div>
   </div>
-</section>
-
-<!-- ── COMMITTEE ── -->
-<section class="section reveal" id="committee">
-  <h2 class="section-title">👥 නිලධාරී <span>මණ්ඩලය</span><span class="sub">කාරක සභාව 2024/2026</span></h2>
-  <div class="group-photo-box" style="display:none;"></div>
-  <div class="committee-grid">
-    <div class="member-card"><div class="member-avatar" style="overflow:hidden;"><img src="https://via.placeholder.com/120x120.png?text=Photo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div><div class="member-role">සභාපති</div><div class="member-name">චන්ද්‍ර පල්ලේගම</div></div>
-    <div class="member-card"><div class="member-avatar" style="overflow:hidden;"><img src="https://via.placeholder.com/120x120.png?text=Photo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div><div class="member-role">උප සභාපති</div><div class="member-name">ස්ටැන්ලි බස්නායක</div></div>
-    <div class="member-card"><div class="member-avatar" style="overflow:hidden;"><img src="https://via.placeholder.com/120x120.png?text=Photo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div><div class="member-role">ලේකම්</div><div class="member-name">ධම්මික විජයවර්ධන</div></div>
-    <div class="member-card"><div class="member-avatar" style="overflow:hidden;"><img src="https://via.placeholder.com/120x120.png?text=Photo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div><div class="member-role">උප ලේකම්</div><div class="member-name">ජගත් මාරසිංහ</div></div>
-    <div class="member-card"><div class="member-avatar" style="overflow:hidden;"><img src="https://via.placeholder.com/120x120.png?text=Photo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div><div class="member-role">භාණ්ඩාගාරික</div><div class="member-name">ප්‍රසාද් යාපා</div></div>
-    <div class="member-card"><div class="member-avatar" style="overflow:hidden;"><img src="https://via.placeholder.com/120x120.png?text=Photo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div><div class="member-role">ගණන් පරීක්ෂක</div><div class="member-name">නන්දන සමරතුංග</div></div>
-    <div class="member-card"><div class="member-avatar" style="overflow:hidden;"><img src="https://via.placeholder.com/120x120.png?text=Photo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div><div class="member-role">ප්‍රධාන සංවිධායක</div><div class="member-name">කීර්ති ජයවීර</div></div>
+</div>
+<!-- 02 වන කාඩ්පත: උපසම්පදා පින්කම සහ සංග්‍රහය -->
+<div class="gallery-item" style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.05); background: #fff;">
+  <!-- ඡායාරූප විනිවිදක (Image Slider) -->
+  <div class="gallery-slider">
+    <img src="https://lh3.googleusercontent.com/d/1P_RyE7uX3Ez42pxHw-957c6-h2yZObVa" alt="උපසම්පදා පින්කම - පින්තූරය 1" onclick="openInfoModal('උපසම්පදාව ලැබූ පොඩි හාමුදුරුවන් වහන්සේ පිළිගැනීමේ මංගල්‍යය')">
+    <img src="https://lh3.googleusercontent.com/d/1_-x3cC_R8LDi5H1jeWDAZXdUA1hYPE1n" alt="උපසම්පදා පින්කම - පින්තූරය 2" onclick="openInfoModal('උපසම්පදාව ලැබූ පොඩි හාමුදුරුවන් වහන්සේ පිළිගැනීමේ මංගල්‍යය')">
+    <img src="https://lh3.googleusercontent.com/d/1FlJjgsdDuFq9Jd9Tw1d_jVKB6AOyD9-d" alt="උපසම්පදා පින්කම - පින්තූරය 3" onclick="openInfoModal('උපසම්පදාව ලැබූ පොඩි හාමුදුරුවන් වහන්සේ පිළිගැනීමේ මංගල්‍යය')">
   </div>
-  <h3 style="font-family:'Noto Serif Sinhala',serif;color:var(--navy);font-size:clamp(17px,3vw,21px);margin-bottom:20px;font-weight:700;">කාරක සභා සාමාජිකයින්</h3>
-  <div class="committee-members-grid">
-    <div class="committee-member-card"><div class="committee-member-num">01</div><div class="committee-member-info"><div class="role">කාරක සභා සාමාජික</div><div class="name">කාරක සභාව</div></div></div>
-    <div class="committee-member-card"><div class="committee-member-num">02</div><div class="committee-member-info"><div class="role">කාරක සභා සාමාජික</div><div class="name">කාරක සභාව</div></div></div>
-    <div class="committee-member-card"><div class="committee-member-num">03</div><div class="committee-member-info"><div class="role">කාරක සභා සාමාජික</div><div class="name">කාරක සභාව</div></div></div>
-    <div class="committee-member-card"><div class="committee-member-num">04</div><div class="committee-member-info"><div class="role">කාරක සභා සාමාජික</div><div class="name">කාරක සභාව</div></div></div>
-    <div class="committee-member-card"><div class="committee-member-num">05</div><div class="committee-member-info"><div class="role">කාරක සභා සාමාජික</div><div class="name">කාරක සභාව</div></div></div>
-    <div class="committee-member-card"><div class="committee-member-num">06</div><div class="committee-member-info"><div class="role">කාරක සභා සාමාජික</div><div class="name">කාරක සභාව</div></div></div>
-    <div class="committee-member-card"><div class="committee-member-num">07</div><div class="committee-member-info"><div class="role">කාරක සභා සාමාජික</div><div class="name">කාරක සභාව</div></div></div>
-    <div class="committee-member-card"><div class="committee-member-num">08</div><div class="committee-member-info"><div class="role">කාරක සභා සාමාජික</div><div class="name">කාරක සභාව</div></div></div>
-    <div class="committee-member-card"><div class="committee-member-num">09</div><div class="committee-member-info"><div class="role">කාරක සභා සාමාජික</div><div class="name">කාරක සභාව</div></div></div>
-    <div class="committee-member-card"><div class="committee-member-num">10</div><div class="committee-member-info"><div class="role">කාරක සභා සාමාජික</div><div class="name">කාරක සභාව</div></div></div>
-    <div class="committee-member-card"><div class="committee-member-num">11</div><div class="committee-member-info"><div class="role">කාරක සභා සාමාජික</div><div class="name">කාරක සභාව</div></div></div>
+  <!-- විස්තර ඇතුළත් කොටස -->
+  <div class="gallery-details" style="padding: 20px; text-align: left;">
+    <h3 style="margin: 0 0 10px 0; color: #2c3e50; font-size: 1.25rem; font-weight: bold;">උපසම්පදාව ලැබූ පොඩි හාමුදුරුවන් වහන්සේ පිළිගැනීමේ මංගල්‍යය සහ සංග්‍රහ පින්කම</h3>
+    <p style="margin: 0 0 15px 0; font-size: 0.95rem; color: #555; line-height: 1.6; text-align: justify;">
+      අප සමිතියේ ප්‍රධාන අනුශාසකයාණන් වහන්සේ වැඩ සිටින දූවවත්ත පුරාණ විහාරස්ථානයේ පොඩි හාමුදුරුවන් වහන්සේ උපසම්පදාව ලබා ආපසු විහාරස්ථානයට වැඩම කරවීමේ අභිමානවත් පුණ්‍ය කර්මය වෙනුවෙන් "අපේ ගම එකමුතුව" අත්වැල බැඳගත් තවත් එක් සොඳුරු අවස්ථාවක්. ජූලි 18 වන දින කොට්ටාව පාරෙන් පිවිසෙන ස්ථානයේ ගෙඩි තොරණක් ඉදිකිරීමට සාමාජික සාමාජිකාවන් ශ්‍රම දායකත්වය ලබා දුන් අතර, ජූලි 19 වන දින බෞද්ධ කොඩි අතැතිව මිරිස්වත්ත මංසන්ධියේ සිට විහාරස්ථානය දක්වා සංවිධානය වූ අලංකාර පෙරහැරට ගම්වාසී සියලු දෙනා එකමුතුව සහභාගී වූහ. එමෙන්ම, පෙරහැරට සහභාගී වූ පිරිස වෙනුවෙන් විහාරස්ථානයේදී කිරි පැකට් සහ ස්පංචි ඇතුළත් සංග්‍රහයක් පිරිනැමීමට ද අප සමිතිය කටයුතු කළේය.
+    </p>
+    <div class="event-date" style="font-size: 0.85rem; color: #7f8c8d; font-weight: bold; border-top: 1px solid #eee; padding-top: 10px; display: flex; align-items: center;">
+      📅 දිනය: <span style="color: #e74c3c; margin-left: 5px;">2026/07/18 - 2026/07/19</span>
+    </div>
   </div>
-</section>
-
-<!-- ── CONTACT ── -->
-<div style="background:var(--gray-1);padding:clamp(56px,9vw,100px) 24px;" class="reveal">
-  <div style="max-width:1280px;margin:auto;">
-    <h2 class="section-title" id="contact">📞 සම්බන්ධ කර <span>ගැනීමට</span><span class="sub">ලිපිනය, දුරකථනය සහ සිතියම</span></h2>
-    <div class="contact-grid">
-      <div class="contact-info-card">
-        <h3>📍 සම්බන්ධකම් තොරතුරු</h3>
-        <div class="contact-item">
-          <div class="contact-icon">🏠</div>
-          <div>
-            <div class="label">ලිපිනය</div>
-            <div class="value">අංක 67, කොට්ටාව පාර,<br>මිරිස්වත්ත, පිළියන්දල.</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">📱</div>
-          <div>
-            <div class="label">දුරකථනය</div>
-            <div class="value"><a href="tel:0774439669">0774 439 669</a></div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">📧</div>
-          <div>
-            <div class="label">ඊ-තැපෑල</div>
-            <div class="value">ape.gama.ekamuthuwa@gmail.com</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">⏰</div>
-          <div>
-            <div class="label">රැස්වීම් වේලාව</div>
-            <div class="value">සෑම ත්‍රෛමාසිකයකට වරක්</div>
-          </div>
+</div>
+    <!-- 03 වන කාඩ්පත: විශේෂ උත්සව සහ ආගමික කටයුතු -->
+    <div class="gallery-item" style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.05); background: #fff;">
+      <!-- ඡායාරූප විනිවිදක (Image Slider) -->
+      <div class="gallery-slider">
+        <img src="https://lh3.googleusercontent.com/d/1LJoTadL5do2zYpR5aLpIlo7Y_zF1Isus" alt="පොසොන් දන්සැල - පින්තූරය 1" onclick="openInfoModal('පොසොන් දන්සැල')">
+        <img src="https://lh3.googleusercontent.com/d/1OJlwXlUmbYL3kKO7SwbpwL3q9Wi0374b" alt="පොසොන් දන්සැල - පින්තූරය 2" onclick="openInfoModal('පොසොන් දන්සැල')">
+        <img src="https://lh3.googleusercontent.com/d/1Ucxh5s_SPBv1sPQ1nPcEE4gsPOpP2IDB" alt="පොසොන් දන්සැල - පින්තූරය 3" onclick="openInfoModal('පොසොන් දන්සැල')">
+      </div>
+      <!-- විස්තර ඇතුළත් කොටස -->
+      <div class="gallery-details" style="padding: 20px; text-align: left;">
+        <h3 style="margin: 0 0 10px 0; color: #2c3e50; font-size: 1.25rem; font-weight: bold;">විශේෂ උත්සව සහ ආගමික කටයුතු</h3>
+        <p style="margin: 0 0 15px 0; font-size: 0.95rem; color: #555; line-height: 1.6; text-align: justify;">
+          පොසොන් දන්සැල ඇතුළු පොදු උත්සවයන් සහ ගමේ සමගිය වර්ධනය කිරීම වෙනුවෙන් පවත්වන ලද ආගමික වැඩසටහන්. [මෙහි ඔබට අවශ්‍ය නව විස්තරය හෙට ඇතුළත් කරන්න]
+        </p>
+        <div class="event-date" style="font-size: 0.85rem; color: #7f8c8d; font-weight: bold; border-top: 1px solid #eee; padding-top: 10px; display: flex; align-items: center;">
+          📅 දිනය: <span style="color: #e74c3c; margin-left: 5px;">[මෙහි දිනය ඇතුළත් කරන්න]</span>
         </div>
       </div>
-      <div class="map-box">
-        <a href="https://maps.app.goo.gl/qP9CifqJjyVkmizp7" target="_blank" class="map-link">
-          <span class="map-icon">🗺️</span>
-          <p><strong style="color:var(--navy);font-size:16px;">Google Maps හා සිතියම</strong><br><br>
-          අංක 67, කොට්ටාව පාර, මිරිස්වත්ත, පිළියන්දල<br><br>
-          ක්ලික් කර Google Maps බලන්න</p>
-          <span class="map-btn">📍 Maps විවෘත කරන්න</span>
-        </a>
+    </div>
+
+  </div>
+</section>
+<!-- COMMITTEE -->
+<section class="section reveal" id="committee">
+  <h2 class="section-title">👥 නිලධාරී <span>මණ්ඩලය</span><span class="sub">නිලධාරී මණ්ඩලය සහ කාරක සභාව 2025/2026</span></h2>
+  
+  <!-- ප්‍රධාන නිලධාරී මණ්ඩලය -->
+  <h3 style="font-family:'Noto Serif Sinhala',serif;color:var(--navy);font-size:clamp(17px,3vw,21px);margin-top:30px;margin-bottom:20px;font-weight:700;text-align:center;">🏆 ප්‍රධාන නිලධාරී මණ්ඩලය</h3>
+  <div class="committee-grid">
+    <!-- සභාපති -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/11Q7hCYDspjGunlFf3DErUaPkb19GFx_9" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="චන්ද්‍රරත්න පල්ලේගම">
+      </div>
+      <div class="member-role">සභාපති</div>
+      <div class="member-name">චන්ද්‍රරත්න පල්ලේගම</div>
+    </div>
+    <!-- උප සභාපති -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/1mgV2gJ5ZwOnCltlLM2aK9h3mjmrUSD9g" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="ස්ටැන්ලි බස්නායක">
+      </div>
+      <div class="member-role">උප සභාපති</div>
+      <div class="member-name">ස්ටැන්ලි බස්නායක</div>
+    </div>
+    <!-- ලේකම් -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/12qyFZh_3fEjm-tL5GeTRHeosoTrfUWR8" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="ධම්මික විජයවර්ධන">
+      </div>
+      <div class="member-role">ලේකම්</div>
+      <div class="member-name">ධම්මික විජයවර්ධන</div>
+    </div>
+    <!-- උප ලේකම් -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/1yEkQoS7p6j6IiPulsWmm-XKOiQwfkltS" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="ජගත් මාරසිංහ">
+      </div>
+      <div class="member-role">උප ලේකම්</div>
+      <div class="member-name">ජගත් මාරසිංහ</div>
+    </div>
+    <!-- භාණ්ඩාගාරික -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/1Uza3PPBWQOabG_Lz8Rb3DlXPqTBXvkNj" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="ප්‍රසාද් සෙනරත් යාපා">
+      </div>
+      <div class="member-role">භාණ්ඩාගාරික</div>
+      <div class="member-name">ප්‍රසාද් සෙනරත් යාපා</div>
+    </div>
+    <!-- ගණන් පරීක්ෂක -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/16OiGBMFnRVoJqEg1ZNiTNixFR_biMQBt" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="නන්දන සමරතුංග">
+      </div>
+      <div class="member-role">ගණන් පරීක්ෂක</div>
+      <div class="member-name">නන්දන සමරතුංග</div>
+    </div>
+    <!-- ප්‍රධාන සංවිධායක -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/13p26DLuQwhBC2h9fO0ucKji2a7O3hgfA" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="කීර්ති ජයසිංහ">
+      </div>
+      <div class="member-role">ප්‍රධාන සංවිධායක</div>
+      <div class="member-name">කීර්ති ජයසිංහ</div>
+    </div>
+  </div>
+
+  <!-- සම සංවිධායකවරුන් -->
+  <h3 style="font-family:'Noto Serif Sinhala',serif;color:var(--navy);font-size:clamp(17px,3vw,21px);margin-top:40px;margin-bottom:20px;font-weight:700;text-align:center;">🤝 සම සංවිධායකවරුන්</h3>
+  <div class="committee-grid">
+    <!-- හරේන්ද්‍ර පෙරේරා (කලින් තිබූ හරින්ද්‍ර පෙරේරා ඡායාරූපයම භාවිතා කර ඇත) -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/14qJaFZtfZGdRsULkvj_F0UgawbfEMOr3" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="හරේන්ද්‍ර පෙරේරා">
+      </div>
+      <div class="member-role">සම සංවිධායක</div>
+      <div class="member-name">හරේන්ද්‍ර පෙරේරා</div>
+    </div>
+    <!-- P. H. ජයසිංහ -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/1ESsBFG8Hwm7tFbITwyubVErsHloUAMHw" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="P. H. ජයසිංහ">
+      </div>
+      <div class="member-role">සම සංවිධායක</div>
+      <div class="member-name">P. H. ජයසිංහ</div>
+    </div>
+    <!-- C. S. ජයවීර -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://via.placeholder.com/120x120.png?text=Photo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="C. S. ජයවීර">
+      </div>
+      <div class="member-role">සම සංවිධායක</div>
+      <div class="member-name">C. S. ජයවීර</div>
+    </div>
+    <!-- මහේෂ් මදුරාවක -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://via.placeholder.com/120x120.png?text=Photo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="මහේෂ් මදුරාවක">
+      </div>
+      <div class="member-role">සම සංවිධායක</div>
+      <div class="member-name">මහේෂ් මදුරාවක</div>
+    </div>
+    <!-- ගාමිණී ලිව්නිස් -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/15VR8SsQ-2XhdbGjp8EOHjnWTuq38xMtA" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="ගාමිණී ලිව්නිස්">
+      </div>
+      <div class="member-role">සම සංවිධායක</div>
+      <div class="member-name">ගාමිණී ලිව්නිස්</div>
+    </div>
+    <!-- හර්ෂා මනෝජනී සමරතුංග (කලින් තිබූ මනෝජනි සමරසිංහ ඡායාරූපයම භාවිතා කර ඇත) -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/1qiq2ihgQHDamIURDAbk9oZ5aCmshZVLH" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="හර්ෂා මනෝජනී සමරතුංග">
+      </div>
+      <div class="member-role">සම සංවිධායක</div>
+      <div class="member-name">හර්ෂා මනෝජනී සමරසිංහ</div>
+    </div>
+    <!-- M. ෂසික රසංග -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/1zcWe0HQBYSOYMNKipaC8WIto4ciOgkj3" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="M. ෂසික රසංග">
+      </div>
+      <div class="member-role">සම සංවිධායක</div>
+      <div class="member-name">M. ෂසික රසංග</div>
+    </div>
+  </div>
+
+  <!-- කාරක සභාව -->
+  <h3 style="font-family:'Noto Serif Sinhala',serif;color:var(--navy);font-size:clamp(17px,3vw,21px);margin-top:40px;margin-bottom:20px;font-weight:700;text-align:center;">👥 කාරක සභා සාමාජිකයින්</h3>
+  <div class="committee-grid">
+    <!-- W. මැද්දගේ (කලින් තිබූ "නම ඇතුළත් කරන්න 6" හි ඡායාරූපය භාවිතා කර ඇත) -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/1OjhQl9mHkFpc5fLiD1zxpPmWyqOQ80bk" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="W. මැද්දගේ">
+      </div>
+      <div class="member-role">කාරක සභා සාමාජික</div>
+      <div class="member-name">W. මැද්දගේ</div>
+    </div>
+    <!-- කුමාර අලහකෝන් -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://via.placeholder.com/120x120.png?text=Photo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="කුමාර අලහකෝන්">
+      </div>
+      <div class="member-role">කාරක සභා සාමාජික</div>
+      <div class="member-name">කුමාර අලහකෝන්</div>
+    </div>
+    <!-- ජයන්ත ගුණවර්ධන -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/1pHWWh7mDZ8cbdyntevNiKZZ5zPgohTll" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="ජයන්ත ගුණවර්ධන">
+      </div>
+      <div class="member-role">කාරක සභා සාමාජික</div>
+      <div class="member-name">ජයන්ත ගුණවර්ධන</div>
+    </div>
+    <!-- ඉෂාර අසංක (ඡායාරූපය සුරක්ෂිතයි) -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/1hJsVg-2VtgSOAjFEu6Khy8dy53_jgVGH" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="ඉෂාර අසංක">
+      </div>
+      <div class="member-role">කාරක සභා සාමාජික</div>
+      <div class="member-name">ඉෂාර අසංක</div>
+    </div>
+    <!-- ප්‍රදීප් ජයගොඩ -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://via.placeholder.com/120x120.png?text=Photo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="ප්‍රදීප් ජයගොඩ">
+      </div>
+      <div class="member-role">කාරක සභා සාමාජික</div>
+      <div class="member-name">ප්‍රදීප් ජයගොඩ</div>
+    </div>
+    <!-- රේනුකා ශ්‍යාමලී ප්‍රනාන්දු -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/1GNBOxZbP3vF3ujmv5zg8OsZFzZR9MHIu" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="රේනුකා ශ්‍යාමලී ප්‍රනාන්දු">
+      </div>
+      <div class="member-role">කාරක සභා සාමාජික</div>
+      <div class="member-name">රේනුකා ශ්‍යාමලී ප්‍රනාන්දු</div>
+    </div>
+    <!-- සුජීවා ලියනගේ -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/17w0zFAcLqGSkqK4NYIqxS6ukjM1Jf8RU" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="සුජීවා ලියනගේ">
+      </div>
+      <div class="member-role">කාරක සභා සාමාජික</div>
+      <div class="member-name">සුජීවා ලියනගේ</div>
+    </div>
+    <!-- අසංග සංජය -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://via.placeholder.com/120x120.png?text=Photo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="අසංග සංජය">
+      </div>
+      <div class="member-role">කාරක සභා සාමාජික</div>
+      <div class="member-name">අසංග සංජය</div>
+    </div>
+    <!-- MDSK රශිකලා -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/1xMI0sZv1DxlVKp5l38ltS10DhlsKcuNv" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="MDSK රශිකලා">
+      </div>
+      <div class="member-role">කාරක සභා සාමාජික</div>
+      <div class="member-name">MDSK රශිකලා</div>
+    </div>
+    <!-- සුජිත් දසනායක -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/1QjX6u7U42Rcr2_QMUfs5piIM2rS81cD-" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="සුජිත් දසනායක">
+      </div>
+      <div class="member-role">කාරක සභා සාමාජික</div>
+      <div class="member-name">සුජිත් දසනායක</div>
+    </div>
+    <!-- නන්දනී මෙන්ඩිස් -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/1C7Ujin8_lxnZT8R67Irg5ukh8D0TVDjx" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="නන්දනී මෙන්ඩිස්">
+      </div>
+      <div class="member-role">කාරක සභා සාමාජික</div>
+      <div class="member-name">නන්දනී මෙන්ඩිස්</div>
+    </div>
+    <!-- සිරිල් බද්දේගම (ඡායාරූපය සුරක්ෂිතයි) -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/1yVMsxLopsBVsPFwIXAQ2N8SLUXn54PsY" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="සිරිල් බද්දේගම">
+      </div>
+      <div class="member-role">කාරක සභා සාමාජික</div>
+      <div class="member-name">සිරිල් බද්දේගම</div>
+    </div>
+    <!-- මාලා ලොකුගේ -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/1exsLPfg2gwPv7Y6QyUxeyyVAWmUVa9O2" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="මාලා ලොකුගේ">
+      </div>
+      <div class="member-role">කාරක සභා සාමාජික</div>
+      <div class="member-name">මාලා ලොකුගේ</div>
+    </div>
+    <!-- දීපිකා මිල්ලනිය -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/1EwHDPZY5haHlPxEqEWOAneh7-JmO3h9r" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="දීපිකා මිල්ලනිය">
+      </div>
+      <div class="member-role">කාරක සභා සාමාජික</div>
+      <div class="member-name">දීපිකා මිල්ලනිය</div>
+    </div>
+    <!-- වින්දි සමරතුංග -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/1KsUCA-dIrFwawAcKQd9XPo9xh_td2cTV" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="වින්දි සමරතුංග">
+      </div>
+      <div class="member-role">කාරක සභා සාමාජික</div>
+      <div class="member-name">වින්දි සමරතුංග</div>
+    </div>
+    <!-- සේන පාදුක්ක (ඡායාරූපය සුරක්ෂිතයි) -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/1-uqmovjJun_z6J93cpGZsR3YjZlZBp_I" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="සේන පාදුක්ක">
+      </div>
+      <div class="member-role">කාරක සභා සාමාජික</div>
+      <div class="member-name">සේන පාදුක්ක</div>
+    </div>
+    <!-- තිලාන් වික්‍රමසිංහ -->
+    <div class="member-card">
+      <div class="member-avatar" style="overflow:hidden;">
+        <img src="https://via.placeholder.com/120x120.png?text=Photo" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" alt="තිලාන් වික්‍රමසිංහ">
+      </div>
+      <div class="member-role">කාරක සභා සාමාජික</div>
+      <div class="member-name">තිලාන් වික්‍රමසිංහ</div>
+    </div>
+  </div>
+</section>
+<!-- CONTACT -->
+<div id="contact">
+  <div class="contact-grid">
+    <div class="contact-info-card">
+      <h3>📍 සම්බන්ධකම් තොරතුරු</h3>
+      <div class="contact-item">
+        <div class="contact-icon">🏠</div>
+        <div>
+          <div class="label">ලිපිනය</div>
+          <div class="value">අංක 67, කොට්ටාව පාර,<br>මිරිස්වත්ත, පිළියන්දල.</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📱</div>
+        <div>
+          <div class="label">දුරකථනය</div>
+          <div class="value"><a href="tel:0774439669">0774 439 669</a></div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📧</div>
+        <div>
+          <div class="label">ඊ-තැපෑල</div>
+          <div class="value">miriswaththaapegama@gmail.com</div>
+        </div>
+      </div>
+    </div>
+    <div class="map-box" style="padding:20px;background:var(--white);box-shadow:var(--shadow);border-radius:var(--radius);display:flex;flex-direction:column;gap:16px;min-height:380px;">
+      <h3 style="color:var(--navy);margin:0;font-family:'Noto Serif Sinhala',serif;font-size:18px;font-weight:700;display:flex;align-items:center;gap:8px;">🗺️ Google Maps සිතියම</h3>
+      <div style="flex:1;border-radius:var(--radius-sm);overflow:hidden;border:1px solid var(--gray-2);min-height:280px;position:relative;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d495.21629968310765!2d79.93312682610741!3d6.8026165935542595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae24f003592d261%3A0x52c393eae1a242b2!2z4La44LeS4La74LeS4LeD4LeK4LeA4Lat4LeK4LatIOC2heC2tOC3miDgtpzgtrgg4LaR4Laa4La44LeU4Lat4LeU!5e0!3m2!1sen!2slk!4v1780344403134!5m2!1sen!2slk"
+          width="100%" height="100%"
+          style="border:0;position:absolute;top:0;left:0;width:100%;height:100%;"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ── FOOTER ── -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">🏛️ මිරිස්වත්ත අපේ ගම එකමුතුව</div>
@@ -808,9 +1123,7 @@ footer a:hover{text-decoration:underline;}
   </div>
 </footer>
 
-<!-- ── MODALS ── -->
-
-<!-- Decisions Modal -->
+<!-- MODALS -->
 <div class="modal-overlay" id="decisionsModal">
   <div class="modal">
     <div class="modal-header">
@@ -841,340 +1154,24 @@ footer a:hover{text-decoration:underline;}
   </div>
 </div>
 
-<!-- Constitution Modal -->
-<div class="modal-overlay" id="constitutionModal">
-  <div class="modal">
+<!-- DOCUMENT MODAL -->
+<div class="modal-overlay" id="docModalOverlay" style="display:none;align-items:center;justify-content:center;">
+  <div class="modal document-modal">
     <div class="modal-header">
-      <h2>📜 සමිති ව්‍යවස්ථාව</h2>
-      <button class="modal-close" onclick="closeModal('constitutionModal')">✕</button>
+      <h2 id="docModalTitle">ලේඛන නාමය</h2>
+      <button class="modal-close" onclick="closeDocModal()">×</button>
     </div>
     <div class="modal-body">
-      <ul>
-        <li><strong>1. සංවිධානයේ නම</strong> මිරිස්වත්ත අපේ ගම එකමුතුව (Miriswatta Ape Gama Ekamuthuwa)</li>
-        <li><strong>2. ලිපිනය</strong> අංක 67, කොට්ටාව පාර, මිරිස්වත්ත, පිළියන්දල.</li>
-        <li><strong>3. සාමාජිකත්වය</strong> මිරිස්වත්ත ප්‍රදේශයේ පදිංචි ඕනෑම නිවසකට සාමාජිකත්වය ලබා ගත හැකිය. මාසික ගාස්තුව රු. 100/= කි.</li>
-        <li><strong>4. මූල්‍ය ප්‍රතිලාභ</strong> සාමාජිකයකු මිය ගිය අවස්ථාවකදී රු. 20,000/= ක ප්‍රතිලාභ ලබා දෙනු ලැබේ.</li>
-        <li><strong>5. කාරක සභාව</strong> සභාපති, උප සභාපති, ලේකම්, උප ලේකම්, භාණ්ඩාගාරික, ගණන් පරීක්ෂක, ප්‍රධාන සංවිධායක සහ කාරක සභිකයන් 11 දෙනෙකුගෙන් සමන්විතය.</li>
-        <li><strong>6. රැස්වීම්</strong> සාමාන්‍ය රැස්වීම ත්‍රෛමාසිකව පැවැත්වෙන අතර, ඇවැසි විටක කාරක සභා රැස්වීම් පැවැත්වෙයි.</li>
-      </ul>
-      <div style="margin-top:20px;text-align:center;">
-        <button class="btn btn-gold" onclick="alert('PDF ලිංකය ඇතුලත් කර ලොඩ් කරන්න')">⬇️ PDF බාගත කරන්න</button>
+      <div class="document-summary-box">
+        <h3>📑 ලේඛන සාරාංශය</h3>
+        <p id="docModalSummary">ලේඛන විස්තරය</p>
       </div>
+      <a id="docPdfBtn" href="#" target="_blank" class="pdf-view-btn">⬇️ PDF ලේඛනය බලන්න</a>
     </div>
-    <div class="modal-footer"><button class="btn btn-navy" onclick="closeModal('constitutionModal')">✕ වසා දමන්න</button></div>
   </div>
 </div>
 
-<!-- Annual Report Modal -->
-<div class="modal-overlay" id="annualModal">
-  <div class="modal">
-    <div class="modal-header">
-      <h2>📊 වාර්ෂික වාර්තා</h2>
-      <button class="modal-close" onclick="closeModal('annualModal')">✕</button>
-    </div>
-    <div class="modal-body">
-      <ul>
-        <li><strong>2024/2025 ආදායම</strong> සාමාජික ගාස්තු, ත්‍යාග, පරිත්‍යාග ඇතුළු මුළු ආදායම.</li>
-        <li><strong>2024/2025 ගෙවීම්</strong> අවමංගල්‍ය ප්‍රතිලාභ, ආගමික, ශ්‍රමදාන, ආධාර සහ ශාලා ව්‍යාපෘති.</li>
-        <li><strong>නව සාමාජිකයන්</strong> 2024/2025 වර්ෂය තුළ ලියාපදිංචි වූ සාමාජිකයන් ගැන තොරතුරු.</li>
-        <li><strong>සාර්ථකත්ව</strong> ගමේ ශ්‍රමදාන, සෞඛ්‍ය සෙව, ක්‍රීඩා සහ සංස්කෘතික වැඩසටහන්.</li>
-        <li><strong>ඉදිරි සැලසුම්</strong> 2025/2026 ක්‍රියාකාරී සැලැස්ම.</li>
-      </ul>
-      <div style="margin-top:20px;text-align:center;">
-        <button class="btn btn-gold" onclick="alert('PDF ලිංකය ඇතුලත් කර ලොඩ් කරන්න')">⬇️ PDF බාගත කරන්න</button>
-      </div>
-    </div>
-    <div class="modal-footer"><button class="btn btn-navy" onclick="closeModal('annualModal')">✕ වසා දමන්න</button></div>
-  </div>
-</div>
-
-<!-- Minutes Modal -->
-<div class="modal-overlay" id="minutesModal">
-  <div class="modal">
-    <div class="modal-header">
-      <h2>📋 රැස්වීම් වාර්තා (Minutes)</h2>
-      <button class="modal-close" onclick="closeModal('minutesModal')">✕</button>
-    </div>
-    <div class="modal-body">
-      <ul>
-        <li><strong>2026-05-24 රැස්වීම</strong> පොසොන් දන්සැල, ව්‍යවස්ථා සංශෝධන, ශාලා ත්‍යාග — ඉහත "කාරක සභා තීරණ" කොටසේ සදහන් කොට ඇත.</li>
-        <li><strong>2026-02-15 රැස්වීම</strong> ගෙවීම් ලේඛනය සමාලෝචනය, නව සාමාජිකයන් ලේඛනය, ගමේ ශ්‍රමදාන සැලසුම්.</li>
-        <li><strong>2025-11-10 රැස්වීම</strong> 2025 ක්‍රීඩා සැමරීම නිමා කිරීම, ශාලාව නිර්මාණ ව්‍යාපෘතිය.</li>
-        <li><strong>2025-08-20 රැස්වීම</strong> 2025/2026 වාර්ෂික සැලැස්ම සම්මතය, නව සාමාජිකත්ව ගාස්තු සාකච්ඡාව.</li>
-      </ul>
-      <div style="margin-top:20px;text-align:center;">
-        <button class="btn btn-gold" onclick="alert('PDF ලිංකය ඇතුලත් කර ලොඩ් කරන්න')">⬇️ PDF බාගත කරන්න</button>
-      </div>
-    </div>
-    <div class="modal-footer"><button class="btn btn-navy" onclick="closeModal('minutesModal')">✕ වසා දමන්න</button></div>
-  </div>
-</div>
-
-<!-- Lottery Modal -->
-<div class="modal-overlay" id="lotteryModal">
-  <div class="modal">
-    <div class="modal-header">
-      <h2>🎟️ රු. 50,000 සීට්ටු ලේඛනය</h2>
-      <button class="modal-close" onclick="closeModal('lotteryModal')">✕</button>
-    </div>
-    <div class="modal-body">
-      <ul>
-        <li><strong>ත්‍යාගය</strong> රු. 50,000/= ප්‍රධාන ත්‍යාගය</li>
-        <li><strong>ටිකට් ගාස්තුව</strong> සෑම ටිකට් එකක් සඳහා රු. 100/=</li>
-        <li><strong>ලබා ගත හැකි ස්ථාන</strong> කාරක සභා සාමාජිකයන්ගෙන් සෘජුව ලබා ගත හැකිය.</li>
-        <li><strong>ජය ග්‍රාහකයා</strong> ලොතරිය දිනය: [දිනය ඇතුළත් කරන්න] — ගමේ සාමාන්‍ය රැස්වීමේදී ජය ග්‍රාහකයා නම් කරනු ලැබේ.</li>
-        <li><strong>ඉලක්කය</strong> ලැබෙන ආදායම ගමේ සංවර්ධන ව්‍යාපෘති සඳහා යොදා ගනු ලැබේ.</li>
-      </ul>
-      <div style="margin-top:20px;text-align:center;">
-        <button class="btn btn-gold" onclick="alert('PDF ලිංකය ඇතුලත් කර ලොඩ් කරන්න')">⬇️ PDF බාගත කරන්න</button>
-      </div>
-    </div>
-    <div class="modal-footer"><button class="btn btn-navy" onclick="closeModal('lotteryModal')">✕ වසා දමන්න</button></div>
-  </div>
-</div>
-
-<script>
-// ── NAV ──
-const hamburger=document.getElementById('hamburger');
-const navEl=document.getElementById('nav');
-hamburger.addEventListener('click',()=>{hamburger.classList.toggle('open');navEl.classList.toggle('open');});
-function closeNav(){hamburger.classList.remove('open');navEl.classList.remove('open');}
-
-// ── MODAL ──
-function openModal(id){document.getElementById(id).classList.add('open');document.body.style.overflow='hidden';}
-function closeModal(id){document.getElementById(id).classList.remove('open');document.body.style.overflow='';}
-document.querySelectorAll('.modal-overlay').forEach(o=>o.addEventListener('click',function(e){if(e.target===this)closeModal(this.id);}));
-document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.modal-overlay.open').forEach(m=>closeModal(m.id));});
-
-// ── MEMBERS DATA ──
-const months=['අගෝස්තු','සැප්තැම්බර්','ඔක්තෝබර්','නොවැම්බර්','දෙසැම්බර්','ජනවාරි','පෙබරවාරි','මාර්තු','අප්‍රේල්','මැයි','ජූනි','ජූලි'];
-
-const members=[
-{id:1,name:'චන්ද්‍රරත්න පල්ලේගම',payments:Array(12).fill('Paid')},
-{id:2,name:'හරීන්ද්‍ර පෙරේරා',payments:Array(12).fill('Paid')},
-{id:3,name:'පී.සී.එස්. ජයවීර',payments:Array(12).fill('Paid')},
-{id:4,name:'හර්ෂා එමි සමරසිංහ',payments:Array(12).fill('Paid')},
-{id:5,name:'නිලන්ති බුවනෙක',payments:Array(12).fill('Paid')},
-{id:6,name:'සුනිල් ප්‍රේමරත්න',payments:Array(12).fill('Paid')},
-{id:7,name:'ඩබ්ලිව්.ඒ. සරත්',payments:Array(12).fill('Paid')},
-{id:8,name:'ආර්.එම්. දයාවතී',payments:Array(12).fill('Paid')},
-{id:9,name:'ඩබ්ලිව්.ඒ. සෝමපාල',payments:Array(12).fill('Paid')},
-{id:10,name:'ජේ.ඒ. සිරිල්',payments:Array(12).fill('Paid')},
-{id:11,name:'ඒ.ඩී. ජයසේන',payments:Array(12).fill('Paid')},
-{id:12,name:'පත්මපානි රාජපක්ෂ',payments:Array(12).fill('Due')},
-{id:13,name:'ඩබ්ලිව්.එම්. කුසුම්',payments:Array(12).fill('Paid')},
-{id:14,name:'එච්.එම්. නිහාල්',payments:Array(12).fill('Paid')},
-{id:15,name:'එච්.එම්. චන්ද්‍රා',payments:Array(12).fill('Paid')},
-{id:16,name:'කේ.ජී. ප්‍රේමදාස',payments:Array(12).fill('Paid')},
-{id:17,name:'ඩබ්ලිව්.ඒ. කමල්',payments:Array(12).fill('Paid')},
-{id:18,name:'ධනුක පෙරේරා',payments:['Paid',...Array(11).fill('Due')]},
-{id:19,name:'එච්.එම්. ඉන්ද්‍රානි',payments:Array(12).fill('Paid')},
-{id:20,name:'එම්.එම්. පද්මා',payments:Array(12).fill('Paid')},
-{id:21,name:'ඩබ්ලිව්.ජී. නන්දාවතී',payments:Array(12).fill('Paid')},
-{id:22,name:'එච්.එම්. සෝමරත්න',payments:Array(12).fill('Paid')},
-{id:23,name:'එච්.එම්. කුමුදුනී',payments:Array(12).fill('Paid')},
-{id:24,name:'එම්.ජී. විමලා',payments:Array(12).fill('Paid')},
-{id:25,name:'එච්.එම්. කරුණාරත්න',payments:Array(12).fill('Paid')},
-{id:26,name:'එච්.එම්. ශාන්ති',payments:Array(12).fill('Paid')},
-{id:27,name:'ජේ.ජී. සුනිල්',payments:Array(12).fill('Paid')},
-{id:28,name:'ඩබ්ලිව්.එම්. අජිත්',payments:Array(12).fill('Paid')},
-{id:29,name:'ඩබ්ලිව්.එම්. නදීකා',payments:Array(12).fill('Paid')},
-{id:30,name:'ආර්.එම්. නිශාන්ත',payments:Array(12).fill('Paid')},
-{id:31,name:'ජී.ඩී. චමින්ද',payments:Array(12).fill('Paid')},
-{id:32,name:'ඩී.එම්. සමන්',payments:Array(12).fill('Paid')},
-{id:33,name:'කේ.ජී. සුජීවා',payments:Array(12).fill('Paid')},
-{id:34,name:'ඩබ්ලිව්.ඒ. ඉන්දික',payments:Array(12).fill('Paid')},
-{id:35,name:'එච්.එම්. ප්‍රියංකා',payments:Array(12).fill('Paid')},
-{id:36,name:'එම්.ජී. අසංක',payments:Array(12).fill('Paid')},
-{id:37,name:'ඩබ්ලිව්.එම්. රුවන්',payments:Array(12).fill('Paid')},
-{id:38,name:'එන්.එස්. ජයසිංහ',payments:Array(12).fill('Due')},
-{id:39,name:'කේ.ඒ. ප්‍රදීප්',payments:Array(12).fill('Paid')},
-{id:40,name:'එච්.එම්. චතුරිකා',payments:Array(12).fill('Paid')},
-{id:41,name:'එම්.ඒ. ප්‍රියන්ත',payments:Array(12).fill('Paid')},
-{id:42,name:'ජේ.ඒ. කුමාරි',payments:Array(12).fill('Paid')},
-{id:43,name:'එම්.ඩී. සරත්',payments:Array(12).fill('Paid')},
-{id:44,name:'ආර්.එම්. රේණුකා',payments:Array(12).fill('Paid')},
-{id:45,name:'කේ.ජී. අනුර',payments:Array(12).fill('Paid')},
-{id:46,name:'ඩබ්ලිව්.ජී. අජිත්',payments:Array(12).fill('Paid')},
-{id:47,name:'එච්.එම්. චාන්දනී',payments:Array(12).fill('Paid')},
-{id:48,name:'එම්.ජී. නුවන්',payments:Array(12).fill('Paid')},
-{id:49,name:'ඩී.එම්. කුමාර',payments:Array(12).fill('Paid')},
-{id:50,name:'වී.ඩබ්ලිව්. බණ්ඩාර',payments:['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due']},
-{id:51,name:'ජේ.ජී. රෝහණ',payments:Array(12).fill('Paid')},
-{id:52,name:'ඩබ්ලිව්.එම්. රංජිත්',payments:Array(12).fill('Paid')},
-{id:53,name:'එච්.එම්. නිමල්',payments:Array(12).fill('Paid')},
-{id:54,name:'කේ.ඒ. සමීර',payments:Array(12).fill('Paid')},
-{id:55,name:'එම්.ජී. ශිරෝමි',payments:Array(12).fill('Paid')},
-{id:56,name:'ආර්.එම්. චතුර',payments:Array(12).fill('Paid')},
-{id:57,name:'ඩබ්ලිව්.ඒ. අසංක',payments:Array(12).fill('Paid')},
-{id:58,name:'එම්.කේ. රසික ප්‍රියන්ත',payments:['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due']},
-{id:59,name:'එච්.එම්. ලක්ෂ්මී',payments:Array(12).fill('Paid')},
-{id:60,name:'ඩී.එම්. සුජීව',payments:Array(12).fill('Paid')},
-{id:61,name:'එන් ද අල්විස්',payments:['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due']},
-{id:62,name:'ආර් එම් ජයකුරු',payments:Array(12).fill('Paid')},
-{id:63,name:'එන්.අයි.කරැණාසේන',payments:Array(12).fill('Paid')},
-{id:64,name:'ප්‍රසන්න කුමාර රාජපක්ෂ',payments:Array(12).fill('Due')},
-{id:65,name:'Abeyrathne Wikcramasigha',payments:Array(12).fill('Paid')},
-{id:66,name:'කේ ඒ අල්විස්',payments:['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due']},
-{id:67,name:'එස් තුෂාරිකා ප්‍රේමත්න',payments:Array(12).fill('Paid')},
-{id:68,name:'එච් ඒ නන්දසිලි',payments:Array(12).fill('Paid')},
-{id:69,name:'එම් ඩී තිලකරත්න',payments:['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due']},
-{id:70,name:'ඒ ඩී එස් යූ මානිකා',payments:Array(12).fill('Paid')},
-{id:71,name:'W J M G W ජයතිලක',payments:Array(12).fill('Paid')},
-{id:72,name:'දිල්රුක් සිවර්ධන',payments:['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due']},
-{id:73,name:'අතුල වීරසිංහ',payments:['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due']},
-{id:74,name:'මහේෂ් ප්‍රියංකර කොස්තා',payments:Array(12).fill('Paid')},
-{id:75,name:'ආර් පී දයාරත්න',payments:Array(12).fill('Paid')},
-{id:76,name:'ඊ පී කපිල ප්‍රියංකර',payments:Array(12).fill('Paid')},
-{id:77,name:'ආර් කේ අසෝකා රාජපක්ෂ',payments:Array(12).fill('Paid')},
-{id:78,name:'ජේ එම් එල් වාජේසේකර',payments:Array(12).fill('Paid')},
-{id:79,name:'ඩි ආර් ආර් එන් කෝට්ටගේ',payments:['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due']},
-{id:80,name:'ආර්.ජී.පී.කේ. රණතුංග',payments:Array(12).fill('Paid')},
-{id:81,name:'චමින්ද නාලක අබේසේකුර',payments:Array(12).fill('Paid')},
-{id:82,name:'ඩි.ඩි.මිල්ලනිය',payments:Array(12).fill('Paid')},
-{id:83,name:'E W R S නානායක්කාර',payments:Array(12).fill('Paid')},
-{id:84,name:'A L සුජීවා ජයමිණි',payments:Array(12).fill('Paid')},
-{id:85,name:'D G සම්පග් දේවසිංහ',payments:Array(12).fill('Paid')},
-{id:86,name:'එච්. ඩී. එස්. සී. සමරසිංහ',payments:Array(12).fill('Paid')},
-{id:87,name:'L D රණවීර',payments:Array(12).fill('Paid')},
-{id:88,name:'කේ.ඩී.නිහාල් පත්මසිරි',payments:Array(12).fill('Paid')},
-{id:89,name:'චාමර කුමාර පතිරගේ',payments:['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due']},
-{id:90,name:'පි ඒ සරත්',payments:Array(12).fill('Paid')},
-{id:91,name:'දෙයාලගේ දොං මහින්ද චන්ද්‍රසිරි',payments:Array(12).fill('Paid')},
-{id:92,name:'W A U පතිරණ',payments:Array(12).fill('Paid')},
-{id:93,name:'පී. එල්. ලියනගේ',payments:Array(12).fill('Paid')},
-{id:94,name:'චන්දන කුලරතින',payments:['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due']},
-{id:95,name:'K D Y D ජයලක්',payments:Array(12).fill('Paid')},
-{id:96,name:'නාඩකන්දගේ අභයසිරි',payments:Array(12).fill('Paid')},
-{id:97,name:'I H C කුලසිංහ',payments:Array(12).fill('Paid')},
-{id:98,name:'T L අසේල චන්න කුමාර',payments:['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Due']},
-{id:99,name:'එච් කේ ඉදුනිල් නදීශ',payments:['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due']},
-{id:100,name:'K සමන්',payments:Array(12).fill('Paid')},
-{id:101,name:'N හෙවගේ',payments:Array(12).fill('Paid')},
-{id:102,name:'S K T පෙරේරා',payments:['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due']},
-{id:103,name:'ජේ.ඒ. චමින්ද කුමාර ලාල් ජයකොඩි',payments:Array(12).fill('Paid')},
-{id:104,name:'T R T K ගුණසේකර',payments:['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due']},
-{id:105,name:'B D අතුකෝරල',payments:Array(12).fill('Paid')},
-{id:106,name:'කේ. එම්. සරත් කුමාර අල්විස්',payments:['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due']},
-{id:107,name:'K වජිර අරවින්ද ද සිල්වා',payments:['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due']},
-{id:108,name:'W K D අතුල පත්මසිරි',payments:Array(12).fill('Paid')},
-{id:109,name:'ජයන්ත බන්දුලාල් ගමගේ',payments:Array(12).fill('Paid')},
-{id:110,name:'K V D Premarathna',payments:['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due']},
-{id:111,name:'සුනිල් මොරවක',payments:Array(12).fill('Paid')},
-{id:112,name:'R D නිහාල් රණවීර',payments:Array(12).fill('Paid')},
-{id:113,name:'K A මනෝජ් ලාල් ප්‍රියදර්ෂණ',payments:['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due']},
-{id:114,name:'R A D අජිත් කුමාරසිරි රණසිංහ',payments:['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due']},
-{id:115,name:'එස් ඩි අර් කේ චන්ද්‍රතිස්ස',payments:Array(12).fill('Paid')},
-{id:116,name:'D S A ලියනගේ',payments:['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due']},
-{id:117,name:'P W K බබරැන්දෙග්',payments:Array(12).fill('Paid')},
-{id:118,name:'සිරිල් බද්දෙගම',payments:Array(12).fill('Paid')},
-{id:119,name:'පී.ජේ.කේ.ගුනවර්ධන',payments:Array(12).fill('Paid')},
-{id:120,name:'බී.ඒ. වීරසිංහ',payments:Array(12).fill('Paid')},
-{id:121,name:'A.M.සෝමාවති',payments:Array(12).fill('Paid')},
-{id:122,name:'අජිත් ධර්මසිරි',payments:Array(12).fill('Paid')},
-{id:123,name:'එස් ටී බූලත්සිංහල',payments:['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due']},
-{id:124,name:'ජගක් ලියනගේ',payments:Array(12).fill('Paid')},
-{id:125,name:'D S V රණවීර',payments:Array(12).fill('Paid')},
-{id:126,name:'එස් ටි අර් බන්ඩර',payments:Array(12).fill('Paid')},
-{id:127,name:'R Renuka Shayamali Fernando',payments:Array(12).fill('Paid')},
-{id:128,name:'A L බුද්ධික සදරුවන්',payments:['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Due','Due']},
-{id:129,name:'චන්දන මනෝජ් සමරතුංග',payments:Array(12).fill('Paid')},
-{id:130,name:'සු එස් කොඩිකාර',payments:['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Due','Due']},
-{id:131,name:'R P D P රාජපක්ෂ',payments:['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Due','Due']},
-{id:132,name:'K G L සිල්වා',payments:['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Due']},
-{id:133,name:'R Kanthi Pranandu',payments:Array(12).fill('Paid')},
-{id:134,name:'පී.එම්.ඒ එල් පෙරේරා',payments:Array(12).fill('Paid')},
-{id:135,name:'ගිහාන් මිල්රොයි පීටර්',payments:['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Due']},
-{id:136,name:'ඉලේපෙරුම ආරච්චිගේ ගීතානි මල්ලිකා',payments:['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Due']},
-{id:137,name:'ජෙ පි ටී කුමාර',payments:Array(12).fill('Paid')},
-{id:138,name:'පී වල්ලව ආරච්චි',payments:Array(12).fill('Paid')},
-{id:139,name:'එල් ඩි ඩි එල් ජයතිලක',payments:Array(12).fill('Paid')},
-{id:140,name:'ටි.එන්. ලොකුගේ',payments:Array(12).fill('Paid')},
-{id:141,name:'එස් ඒ කනිල්',payments:['Paid','Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due']},
-{id:142,name:'එම් කමිල දසංග',payments:['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Due','Due','Due']},
-{id:143,name:'එම් ඒ අනුර ලක්ෂන් පෙ',payments:['Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due','Due']},
-{id:144,name:'S H සිරිල්',payments:Array(12).fill('Paid')},
-{id:145,name:'R P D D D රාජපක්ෂ',payments:Array(12).fill('Paid')},
-{id:146,name:'K D සුමිත්',payments:Array(12).fill('Paid')},
-{id:147,name:'T E D නලින්ද',payments:Array(12).fill('Paid')},
-{id:148,name:'ඉන්නාම් ඉෆ්නිකාර්',payments:Array(12).fill('Paid')},
-{id:149,name:'H මුදියව්සේලාගේ සිරිසේන',payments:Array(12).fill('Paid')},
-{id:150,name:'හේවා ගේ චන්ද්‍රවතී දඹරේ',payments:Array(12).fill('Paid')},
-{id:151,name:'C J කත්‍රිආරච්චි',payments:Array(12).fill('Paid')},
-{id:152,name:'H සිරිවර්ධන',payments:Array(12).fill('Paid')},
-{id:153,name:'A R සිරියර්ධන',payments:Array(12).fill('Paid')},
-{id:154,name:'M M චානග පුෂ්පකුමාර',payments:['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Due','Due','Due']},
-{id:155,name:'සැබෑ නම',payments:Array(12).fill('Paid')},
-{id:156,name:'T නන්දවතී පෙරෙරා',payments:Array(12).fill('Paid')},
-{id:157,name:'D Bombuwala',payments:Array(12).fill('Paid')},
-{id:158,name:'J K තිමේෂ් ආර් ජයවීර',payments:Array(12).fill('Paid')},
-{id:159,name:'දිවිගල්ලගේ ස්වර්ණලා',payments:Array(12).fill('Paid')},
-{id:160,name:'ඒ ගාමිණි ලිවිනිස්',payments:Array(12).fill('Paid')},
-{id:161,name:'කටුවාවලගේ දොන් නලින් ප්‍රසන්න',payments:Array(12).fill('Paid')},
-{id:162,name:'ඩී.ඒ.පී.ගමගෙ',payments:Array(12).fill('Paid')},
-{id:163,name:'A U කළුආරච්චි',payments:Array(12).fill('Paid')},
-{id:164,name:'බී.ඩී.එල්. ලහිරු පැතුම් පියමන්ත',payments:Array(12).fill('Paid')},
-{id:165,name:'K M M ශ්‍රීනාත් ශාන්තකුමාර',payments:Array(12).fill('Paid')},
-{id:166,name:'එම්.පී.එල්.ද සිල්වා',payments:Array(12).fill('Paid')},
-{id:167,name:'P A P ධර්මබන්ධු',payments:Array(12).fill('Paid')},
-{id:168,name:'Y ජයසේකර',payments:Array(12).fill('Paid')},
-{id:169,name:'S A D M සංජු',payments:Array(12).fill('Paid')},
-{id:170,name:'උපුල් විතානගේ',payments:Array(12).fill('Paid')},
-{id:171,name:'W පත්මනුමාර',payments:Array(12).fill('Paid')},
-{id:172,name:'M අජිත් ධර්මසිරි',payments:Array(12).fill('Paid')},
-{id:173,name:'P I මධූසංඛ',payments:Array(12).fill('Paid')},
-{id:174,name:'D K D සුනිල් කරුණාතිලක',payments:Array(12).fill('Paid')},
-{id:175,name:'U L L F පෙරේරා',payments:Array(12).fill('Paid')},
-{id:176,name:'B S හරින්ද්‍ර පෙරේරා',payments:Array(12).fill('Paid')}
-];
-
-function searchMember(){
-  const id=parseInt(document.getElementById('memberId').value);
-  const member=members.find(m=>m.id===id);
-  const result=document.getElementById('result');
-  if(!member||isNaN(id)){
-    result.innerHTML='<div class="error-box">❌ සාමාජිකයා හමු නොවීය. කරුණාකර නිවැරදි අංකයක් (1–176) ඇතුලත් කරන්න.</div>';
-    return;
-  }
-  const paidCount=member.payments.filter(p=>p==='Paid').length;
-  const dueCount=12-paidCount;
-  let rows='';
-  months.forEach((month,i)=>{
-    const isPaid=member.payments[i]==='Paid';
-    rows+=`<tr><td>${month}</td><td>${isPaid?'<span class="badge paid">✅ ගෙවා ඇත</span>':'<span class="badge due">⚠️ හිඟ</span>'}</td></tr>`;
-  });
-  result.innerHTML=`
-    <div class="member-header">
-      <div class="member-header-avatar">👤</div>
-      <div><h3>${member.name}</h3><p>සාමාජික අංකය: <strong>${member.id}</strong></p></div>
-    </div>
-    <div class="summary-pills">
-      <span class="pill pill-paid">✅ ගෙවූ: ${paidCount}</span>
-      <span class="pill pill-due">⚠️ හිඟ: ${dueCount}</span>
-    </div>
-    <div class="payment-table-wrap">
-      <table>
-        <thead><tr><th>මාසය</th><th>ගෙවීම් තත්ත්වය</th></tr></thead>
-        <tbody>${rows}</tbody>
-      </table>
-    </div>`;
-}
-
-function resetSearch(){
-  document.getElementById('memberId').value='';
-  document.getElementById('result').innerHTML='';
-}
-
-document.getElementById('memberId').addEventListener('keypress',e=>{if(e.key==='Enter')searchMember();});
-
-// ── SCROLL REVEAL ──
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('active');});
-},{threshold:0.06,rootMargin:'0px 0px -30px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>el.classList.add('active')),1800);
-</script>
-
+<!-- INFO MODAL -->
 <div id="infoModal" class="info-modal">
   <div class="info-modal-content">
     <button class="info-close" onclick="closeInfoModal()">&times;</button>
@@ -1184,20 +1181,856 @@ setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>el.classList.add
 </div>
 
 <script>
-const infoContent = {
-'ප්‍රජා සංවර්ධනය සහ එකමුතුකම':'ප්‍රජාව තුළ එකමුතුකම, සහයෝගීතාවය සහ සංවර්ධනය ශක්තිමත් කිරීම සඳහා විවිධ වැඩසටහන් ක්‍රියාත්මක කරයි.',
-'සාමාජික සුභසාධනය':'සාමාජිකයින්ගේ සුභසාධනය සහ යහපැවැත්ම වෙනුවෙන් සහාය ලබාදේ.',
-'දුෂ්කර අවස්ථාවලදී සහන':'හදිසි සහ දුෂ්කර අවස්ථාවලදී අවශ්‍ය සහන සහ උපකාර ලබාදේ.',
-'ළමා හා තරුණ අභිවර්ධනය':'දරුවන් සහ තරුණයන් සඳහා අධ්‍යාපනික හා සමාජීය වැඩසටහන් සංවිධානය කරයි.',
-'පොදු පහසුකම් සංවර්ධනය':'ගමේ පොදු පහසුකම් සංවර්ධනය කිරීම සඳහා ව්‍යාපෘති ක්‍රියාත්මක කරයි.',
-'අපගේ සේවා':'ප්‍රජාවට ලබාදෙන විවිධ සේවා සහ වැඩසටහන් පිළිබඳ විස්තර.'
-};
-function openInfoModal(title){
- document.getElementById('infoModalTitle').innerText=title;
- document.getElementById('infoModalText').innerText=infoContent[title] || 'වැඩි විස්තර ඉක්මනින් එක් කරනු ඇත.';
- document.getElementById('infoModal').style.display='flex';
+const googleWebAppUrl = "https://script.google.com/macros/s/AKfycbzmZkVfW4F0_TBcW0FEtONezPBiQJK6HfO1xj7ciAvKgBPDeY5G89yKo35tp-E7Yz6i/exec";
+
+function submitReceipt() {
+  const submitBtn = document.getElementById('submitBtn');
+  const messageDiv = document.getElementById('uploadMessage');
+  const fileInput = document.getElementById('receiptFile');
+  const file = fileInput.files[0];
+
+  if (!file) {
+    messageDiv.style.display = 'block';
+    messageDiv.style.backgroundColor = '#f8d7da';
+    messageDiv.style.color = '#721c24';
+    messageDiv.innerText = 'කරුණාකර රිසිට් පතක් තෝරන්න.';
+    return;
+  }
+
+  submitBtn.disabled = true;
+  submitBtn.style.backgroundColor = '#555';
+  submitBtn.innerText = 'මදක් රැඳී සිටින්න... ⏳';
+  messageDiv.style.display = 'none';
+
+  const reader = new FileReader();
+  reader.onloadend = function() {
+    const base64Data = reader.result;
+    const formData = new URLSearchParams();
+    formData.append('fileData', base64Data);
+    formData.append('filename', file.name);
+    formData.append('memberName', document.getElementById('memberName').value);
+    formData.append('memberId', document.getElementById('memberFormId').value);
+    formData.append('memberPhone', document.getElementById('memberPhone').value);
+
+    fetch(googleWebAppUrl, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+    })
+    .then(response => response.json())
+    .then(data => {
+      submitBtn.disabled = false;
+      submitBtn.style.backgroundColor = '#1a2a6c';
+      submitBtn.innerText = 'දත්ත ඇතුළත් කරන්න 🚀';
+      messageDiv.style.display = 'block';
+      if (data.status === 'success') {
+        messageDiv.style.backgroundColor = '#d4edda';
+        messageDiv.style.color = '#155724';
+        messageDiv.innerText = data.message;
+        document.getElementById('memberName').value = '';
+        document.getElementById('memberFormId').value = '';
+        document.getElementById('memberPhone').value = '';
+        document.getElementById('receiptFile').value = '';
+      } else {
+        messageDiv.style.backgroundColor = '#f8d7da';
+        messageDiv.style.color = '#721c24';
+        messageDiv.innerText = 'යම් දෝෂයක් සිදු වුනා. නැවත උත්සාහ කරන්න.';
+      }
+    })
+    .catch(error => {
+      submitBtn.disabled = false;
+      submitBtn.style.backgroundColor = '#1a2a6c';
+      submitBtn.innerText = 'දත්ත ඇතුළත් කරන්න 🚀';
+      messageDiv.style.display = 'block';
+      messageDiv.style.backgroundColor = '#f8d7da';
+      messageDiv.style.color = '#721c24';
+      messageDiv.innerText = 'සන්නිවේදන දෝෂයක්! කරුණාකර අන්තර්ජාල සම්බන්ධතාව පරීක්ෂා කරන්න.';
+    });
+  };
+  reader.readAsDataURL(file);
 }
-function closeInfoModal(){ document.getElementById('infoModal').style.display='none'; }
+
+// NAV
+const hamburger = document.getElementById('hamburger');
+const navEl = document.getElementById('nav');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  navEl.classList.toggle('open');
+});
+function closeNav() {
+  hamburger.classList.remove('open');
+  navEl.classList.remove('open');
+}
+
+// MODAL
+function openModal(id) {
+  document.getElementById(id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.querySelectorAll('.modal-overlay').forEach(o => o.addEventListener('click', function(e) {
+  if (e.target === this) {
+    this.classList.remove('open');
+    this.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+}));
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m.id));
+    closeDocModal();
+    closeInfoModal();
+  }
+});
+
+function openDocModal(title, summary, pdfUrl) {
+  const o = document.getElementById('docModalOverlay');
+  document.getElementById('docModalTitle').innerText = title;
+  document.getElementById('docModalSummary').innerText = summary;
+  document.getElementById('docPdfBtn').href = pdfUrl;
+  o.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+function closeDocModal() {
+  document.getElementById('docModalOverlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+// INFO MODAL DATA WITH LATEST SINHALA TEXT
+const infoContent = {
+  // === ABOUT SECTION DATA ===
+  'ප්‍රජා සංවර්ධනය සහ එකමුතුකම': 'ප්‍රදේශයේ සියලුම ගම්වාසීන් අතර අන්‍යෝන්‍ය සුහදතාවය, ශක්තිමත් සහයෝගීතාවය සහ සහෝදරත්වය වර්ධනය කරමින් එකිනෙකාට උදව් උපකාර කරගන්නා ආදර්ශමත් ප්‍රජාවක් බිහිකිරීම මෙහි මූලික අරමුණයි. 🤝🌟',
+  
+  'සාමාජික සුභසාධනය': 'අපගේ එකමුතුවේ සාමාජිකයන්ගේ සහ ඔවුන්ගේ පවුල්වල සාමාජිකයන්ගේ සුභසාධනය උදෙසා විවිධ සුභසාධන ව්‍යාපෘති, සෞඛ්‍ය සායන සහ හදිසි ආධාර ලබාදීමේ විශේෂ වැඩසටහන් නිරන්තරයෙන් ක්‍රියාත්මක කරයි. 🚨🎉',
+  
+  'දුෂ්කර අවස්ථාවලදී සහන': 'සාමාජිකයන් මුහුණ දෙන ආර්ථික මෙන්ම වෙනත් ඕනෑම අනපේක්ෂිත දුෂ්කරතාවලදී, එම දුෂ්කරතා සමනය කරගැනීම සඳහා ඔවුන්ට නිරන්තර අත්වැලක් සහ ශක්තිමත් පිටුවහලක් ලබාදේ. 💪💰',
+  
+  'ළමා හා තරුණ අභිවර්ධනය': 'අපේ එකමුතුවේ සාමාජික පවුල්වල සිටින ළමා හා තරුණ පරපුර උදෙසා වැඩි අවස්ථාවන් ලබා දෙමින්, ඔවුන්ගේ සහජ දක්ෂතා හා කුසලතා වැඩිදියුණු කර ගැනීමට නිවැරදි මගපෙන්වීම් ලබාදේ. 📚🌱',
+  
+  'පොදු පහසුකම් සංවර්ධනය': 'ප්‍රදේශයේ පවතින ආගමික, සංස්කෘතික හා සාම්ප්‍රදායික කටයුතුවලදී ගමේ පොදු පහසුකම් සංවර්ධනය කරමින් ප්‍රදේශයේ සමස්ත ජනතාවගේම යහපත උදෙසා විවිධ ව්‍යාපෘති ක්‍රියාත්මක කරයි. 🌍🛠️',
+
+  // === SERVICES SECTION DATA ===
+  'ග්‍රාම සංවර්ධනය': 'ශ්‍රමදාන කටයුතු සහ ග්‍රාම සේවක නිලධාරීතුමා විසින් දැනුවත් කරනු ලබන පොදු සංවර්ධන කටයුතු සඳහා උපරිම සහයෝගය සහ ශ්‍රම දායකත්වය ලබාදීම. 🛠️🏡',
+  
+  'අධ්‍යාපනික සහය': 'ප්‍රදේශයේ ජීවත්වන අඩු ආදායම්ලාභී පවුල්වල දරුවන් වෙනුවෙන් පවතින ආර්ථික දුෂ්කරතා මගහරවා ගැනීමට සහ බුද්ධිමය වර්ධනය උදෙසා උදව් උපකාර කිරීම. 📚🎓',
+  
+  'සෞඛ්‍ය සුභසාධනය': 'ගම්වාසීන්ගේ සෞඛ්‍ය සුභසාධන කටයුතු, වෛද්‍ය සායන සහ විවිධ වෛද්‍ය ප්‍රතිකාර සඳහා අවශ්‍ය සහයෝගය සහ මගපෙන්වීම් ලබාදීම. 🏥🩺',
+  
+  'සංස්කෘතික කටයුතු': 'ගමේ සියලුම ආකාරයේ ආගමික, සාම්ප්‍රදායික සහ සංස්කෘතික කටයුතු සාර්ථකව සිදුකර ගැනීමට අවශ්‍ය අවස්ථාවන් සහ දායකත්වය ලබාදීම. 🎭✨',
+  
+  'මූල්‍ය ව්‍යාපෘති': 'සාමාජිකයන්ට අන්‍යෝන්‍ය ප්‍රතිලාභ අත්වන ආකාරයෙන් වෙන්දේසි සීට්ටු වැනි විවිධ මූල්‍ය සහ සහනදායී ව්‍යාපෘති ක්‍රියාත්මක කිරීම. 💰📊',
+  
+  'අපගේ සේවා': 'මිරිස්වත්ත අපේ ගමේ එකමුතුව මගින් ප්‍රජාවගේ ආර්ථික, සමාජීය, ආගමික සහ සෞඛ්‍යමය උන්නතිය වෙනුවෙන් කැපවීමෙන් ඉටුකරනු ලබන සමස්ත සේවාවන් සහ වැඩසටහන් මීට ඇතුළත් වේ. 📋✨',
+
+  // === GENERAL EVENTS DATA ===
+  'සාමාජික රැස්වීම': 'මිරිස්වත්ත අපේ ගම එකමුතුව සංගමයේ ත්‍රෛමාසික මහා සාමාන්‍ය රැස්වීම සාමාජිකයන්ගේ වැඩි සහභාගීත්වයෙන් ප්‍රජා ශාලාවේදී සාර්ථකව පවත්වන ලදී. එහිදී ඉදිරි සංවර්ධන කටයුතු පිළිබඳ සාකච්ඡා විය. 🏛️💬',
+  
+  'ශ්‍රමදාන': 'ගම්මානයේ පොදු පරිසරය පිරිසිදුව තබාගැනීම වෙනුවෙන් සංවිධානය කළ මහා ශ්‍රමදාන ව්‍යාපාරය සාර්ථකව නිමවිය. කානු පද්ධති පිරිසිදු කිරීම, මාර්ග දෙපස කැළි කසල ඉවත් කිරීම සහ පොදු ස්ථාන සුරැකීම මෙහිදී ගම්වාසීන්ගේ ශ්‍රම දායකත්වයෙන් සිදුකෙරුණි. 🧹🌱',
+  
+  'පොසොන් දන්සැල': 'පොසොන් පොහෝ දිනය නිමිත්තෙන් ගම්වාසීන් සියලු දෙනාගේ එකමුතුවෙන්, ශ්‍රම හා මූල්‍ය දායකත්වයෙන් පවත්වන ලද වාර්ෂික මහා බත් දන්සැල සහ ආගමික වැඩසටහන් මාලාව උතුම් ශ්‍රද්ධා භක්තියෙන් යුතුව සාර්ථකව පවත්වා නිම කරන ලදී. 🍚🙏'
+};
+
+// MODAL FUNCTIONS
+function openInfoModal(title) {
+  // ඔබගේ HTML එකේ ID එක 'infoModalDesc' හෝ 'infoModalText' විය හැක. දෙකටම ගැලපෙන ලෙස සකස් කර ඇත.
+  const modalTextElement = document.getElementById('infoModalText') || document.getElementById('infoModalDesc');
+  
+  document.getElementById('infoModalTitle').innerText = title;
+  
+  if (modalTextElement) {
+    modalTextElement.innerText = infoContent[title] || 'වැඩි විස්තර ඉක්මනින් එක් කරනු ඇත.';
+  }
+  
+  document.getElementById('infoModal').style.display = 'flex';
+}
+
+function closeInfoModal() {
+  document.getElementById('infoModal').style.display = 'none';
+}
+// MEMBERS DATA
+const months = ['අගෝස්තු','සැප්තැම්බර්','ඔක්තෝබර්','නොවැම්බර්','දෙසැම්බර්','ජනවාරි','පෙබරවාරි','මාර්තු','අප්‍රේල්','මැයි','ජූනි','ජූලි'];
+
+const members = [];
+for (let i = 1; i <= 176; i++) {
+  members.push({ id: i, name: 'සාමාජිකයා #' + i });
+}
+
+const paymentRecords = {
+  '2024': {
+    1: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    2: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    3: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    4: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    5: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    6: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    7: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    8: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    9: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    10: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    11: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    12: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    13: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    14: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    15: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    16: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    17: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    18: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    19: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    20: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    21: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    22: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    23: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    24: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    25: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    26: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    27: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    28: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    29: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    30: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    31: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    32: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    33: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    34: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    35: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    36: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    37: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    38: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    39: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    40: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    41: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    42: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    43: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    44: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    45: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    46: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    47: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    48: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    49: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    50: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    51: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    52: ['Due','Due','Due','Due','Due','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    53: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    54: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    55: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    56: ['Due','Due','Due','Due','Due','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    57: ['Due','Due','Due','Due','Due','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    58: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    59: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    60: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    61: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    62: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    63: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    64: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    65: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    66: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    67: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    68: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    69: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    70: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    71: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    72: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    73: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    74: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    75: ['Due','Due','Due','Due','Due','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    76: ['Due','Due','Due','Due','Due','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    77: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    78: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    79: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    80: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    81: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    82: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    83: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    84: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    85: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    86: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    87: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    88: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    89: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    90: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    91: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    92: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    93: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    94: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    95: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    96: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    97: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    98: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    99: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    100: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    101: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    102: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    103: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    104: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    105: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    106: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    107: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    108: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    109: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    110: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    111: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    112: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    113: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    114: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    115: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    116: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    117: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    118: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    119: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    120: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    121: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    122: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    123: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    124: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    125: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    126: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    127: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    128: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Due','Due'],
+    129: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    130: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Due','Due'],
+    131: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Due','Due'],
+    132: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Due'],
+    133: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    134: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    135: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Due'],
+    136: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Due'],
+    137: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    138: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    139: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    140: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    141: ['Due','Due','Due','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due'],
+    142: ['Due','Due','Due','Paid','Paid','Paid','Paid','Paid','Paid','Due','Due','Due'],
+    143: ['Due','Due','Due','Paid','Due','Due','Due','Due','Due','Due','Due','Due'],
+    144: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    145: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    146: ['Not','Not','Not','Not','Not','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    147: ['Not','Not','Not','Not','Not','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    148: ['Not','Not','Not','Not','Not','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    149: ['Not','Not','Not','Not','Not','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    150: ['Not','Not','Not','Not','Not','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    151: ['Not','Not','Not','Not','Not','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    152: ['Not','Not','Not','Not','Not','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    153: ['Not','Not','Not','Not','Not','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    154: ['Not','Not','Not','Not','Not','Paid','Paid','Paid','Paid','Due','Due','Due'],
+    155: ['Not','Not','Not','Not','Not','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    156: ['Not','Not','Not','Not','Not','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    157: ['Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not'],
+    158: ['Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Paid','Paid'],
+    159: ['Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Paid'],
+    160: ['Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not'],
+    161: ['Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not'],
+    162: ['Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not'],
+    163: ['Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not'],
+    164: ['Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not'],
+    165: ['Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not'],
+    166: ['Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not'],
+    167: ['Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not'],
+    168: ['Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not'],
+    169: ['Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not'],
+    170: ['Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not'],
+    171: ['Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not'],
+    172: ['Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not'],
+    173: ['Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not'],
+    174: ['Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not'],
+    175: ['Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not'],
+    176: ['Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not']
+  },
+  '2025': {
+    1: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    2: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    3: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    4: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    5: ['Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    6: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    7: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    8: ['Not','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    9: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    10: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    11: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    12: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    13: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    14: ['Paid','Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due'],
+    15: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    16: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    17: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    18: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    19: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    20: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    21: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    22: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    23: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    24: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    25: ['Paid','Paid','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    26: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    27: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    28: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    29: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    30: ['Paid','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    31: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    32: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    33: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    34: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    35: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    36: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    37: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    38: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    39: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    40: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    41: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    42: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    43: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    44: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    45: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    46: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    47: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    48: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    49: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    50: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    51: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    52: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    53: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    54: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    55: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    56: ['Paid','Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due'],
+    57: ['Paid','Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due'],
+    58: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    59: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    60: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    61: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    62: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    63: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    64: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    65: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    66: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    67: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    68: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Due','Due'],
+    69: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    70: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    71: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    72: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    73: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    74: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    75: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    76: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    77: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    78: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    79: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    80: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    81: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    82: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    83: ['Paid','Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due'],
+    84: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    85: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    86: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    87: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    88: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    89: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    90: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    91: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    92: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    93: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    94: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    95: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    96: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    97: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    98: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    99: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    100: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    101: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    102: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    103: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    104: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    105: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    106: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    107: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    108: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    109: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    110: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    111: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    112: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    113: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    114: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    115: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    116: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    117: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    118: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    119: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    120: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    121: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    122: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    123: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    124: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    125: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    126: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Due','Due'],
+    127: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Due','Due'],
+    128: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    129: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Due','Due'],
+    130: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    131: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    132: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    133: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Due','Due','Due'],
+    134: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Due'],
+    135: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    136: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    137: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    138: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    139: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    140: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    141: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    142: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    143: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    144: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    145: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    146: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    147: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    148: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    149: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    150: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    151: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    152: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    153: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    154: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    155: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    156: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Due','Due','Due'],
+    157: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Due','Due'],
+    158: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Due','Due'],
+    159: ['Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    160: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    161: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    162: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    163: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    164: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    165: ['Due','Due','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    166: ['Due','Due','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    167: ['Due','Due','Due','Due','Due','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    168: ['Due','Due','Due','Due','Due','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    169: ['Due','Due','Due','Due','Due','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    170: ['Due','Due','Due','Due','Due','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    171: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    172: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    173: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    174: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    175: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid'],
+    176: ['Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid','Paid']
+  },
+  '2026': {
+    1: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    2: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    3: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    4: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    5: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    6: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    7: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    8: ['Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not','Not'],
+    9: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    10: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    11: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    12: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    13: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    14: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    15: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    16: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    17: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    18: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    19: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    20: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    21: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    22: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    23: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    24: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    25: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    26: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    27: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    28: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    29: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    30: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    31: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    32: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    33: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    34: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    35: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    36: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    37: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    38: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    39: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    40: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    41: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    42: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    43: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    44: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    45: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    46: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    47: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    48: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    49: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    50: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    51: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    52: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    53: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    54: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    55: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    56: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    57: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    58: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    59: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    60: ['Paid','Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due'],
+    61: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    62: ['Paid','Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due'],
+    63: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    64: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    65: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    66: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    67: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    68: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    69: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    70: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    71: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    72: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    73: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    74: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    75: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    76: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    77: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    78: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    79: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    80: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    81: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    82: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    83: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    84: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    85: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    86: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    87: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    88: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    89: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    90: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    91: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    92: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    93: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    94: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    95: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    96: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    97: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    98: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    99: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    100: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    101: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    102: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    103: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    104: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    105: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    106: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    107: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    108: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    109: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    110: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    111: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    112: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    113: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    114: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    115: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    116: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    117: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    118: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    119: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    120: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    121: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    122: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    123: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    124: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    125: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    126: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    127: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    128: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    129: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    130: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    131: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    132: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    133: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    134: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    135: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    136: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    137: ['Paid','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    138: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    139: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    140: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    141: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    142: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    143: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    144: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    145: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    146: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    147: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    148: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    149: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    150: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    151: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    152: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    153: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    154: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    155: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    156: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    157: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    158: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    159: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    160: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    161: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    162: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    163: ['Paid','Paid','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    164: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    165: ['Paid','Paid','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    166: ['Paid','Paid','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    167: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    168: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    169: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    170: ['Paid','Paid','Paid','Paid','Paid','Due','Due','Due','Due','Due','Due','Due'],
+    171: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    172: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    173: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    174: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    175: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due'],
+    176: ['Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due','Due']
+  }
+};
+
+let currentSearchedId = null;
+let currentSelectedYear = '2026';
+
+function searchMember() {
+  const idInput = document.getElementById('memberSearchId').value;
+  const id = parseInt(idInput);
+  const resultDiv = document.getElementById('result');
+
+  if (isNaN(id) || id < 1 || id > 176) {
+    resultDiv.innerHTML = '<div class="error-box">❌ සාමාජිකයා හමු නොවීය. කරුණාකර නිවැරදි අංකයක් (1–176) ඇතුලත් කරන්න.</div>';
+    currentSearchedId = null;
+    removeTabs();
+    return;
+  }
+
+  currentSearchedId = id;
+  createYearTabs();
+  renderPaymentTable();
+}
+
+function createYearTabs() {
+  let tabsWrapper = document.getElementById('dynamicYearTabs');
+  if (!tabsWrapper) {
+    tabsWrapper = document.createElement('div');
+    tabsWrapper.id = 'dynamicYearTabs';
+    tabsWrapper.style.cssText = 'margin:20px 0 15px 0;background:var(--gray-1);padding:5px;border-radius:var(--radius-sm);border:1px solid var(--gray-2);display:grid;grid-template-columns:repeat(3,1fr);gap:5px;';
+
+    const years = [
+      { code: '2024', label: '2024/25' },
+      { code: '2025', label: '2025/26' },
+      { code: '2026', label: '2026/27' }
+    ];
+
+    years.forEach(y => {
+      const btn = document.createElement('button');
+      btn.className = 'year-tab-btn';
+      btn.id = 'tab-' + y.code;
+      btn.innerText = y.label;
+      btn.style.cssText = 'border:none;padding:10px 2px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;background:none;color:var(--text-soft);font-family:inherit;transition:all 0.3s;';
+      btn.onclick = () => switchYear(y.code);
+      tabsWrapper.appendChild(btn);
+    });
+
+    const resultDiv = document.getElementById('result');
+    resultDiv.parentNode.insertBefore(tabsWrapper, resultDiv);
+  }
+}
+
+function removeTabs() {
+  const tabsWrapper = document.getElementById('dynamicYearTabs');
+  if (tabsWrapper) tabsWrapper.remove();
+}
+
+function switchYear(year) {
+  if (!currentSearchedId) return;
+  currentSelectedYear = year;
+  renderPaymentTable();
+}
+
+function renderPaymentTable() {
+  const resultDiv = document.getElementById('result');
+  const member = members.find(m => m.id === currentSearchedId);
+
+  document.querySelectorAll('.year-tab-btn').forEach(btn => {
+    btn.style.background = 'none';
+    btn.style.color = 'var(--text-soft)';
+    btn.style.boxShadow = 'none';
+  });
+
+  const activeTab = document.getElementById('tab-' + currentSelectedYear);
+  if (activeTab) {
+    activeTab.style.background = 'var(--white)';
+    activeTab.style.color = 'var(--navy)';
+    activeTab.style.boxShadow = '0 2px 8px rgba(0,0,0,0.06)';
+  }
+
+  const yearData = paymentRecords[currentSelectedYear][currentSearchedId];
+  if (!yearData) {
+    resultDiv.innerHTML = '<div class="error-box">මෙම වසරට දත්ත නොමැත.</div>';
+    return;
+  }
+
+  const paidCount = yearData.filter(p => p === 'Paid').length;
+  const dueCount = yearData.filter(p => p === 'Due').length;
+  const notCount = yearData.filter(p => p === 'Not').length;
+
+  const yearLabels = { '2024': '2024/2025', '2025': '2025/2026', '2026': '2026/2027' };
+  const yearDisplay = yearLabels[currentSelectedYear];
+
+  let rows = '';
+  months.forEach((month, i) => {
+    const status = yearData[i];
+    let badge = '';
+    if (status === 'Paid') badge = '<span class="badge paid">✅ ගෙවා ඇත</span>';
+    else if (status === 'Due') badge = '<span class="badge due">⚠️ හිඟ මුදල් ඇත</span>';
+    else badge = '<span class="badge" style="background:#e5e7eb;color:#6b7280;padding:4px 10px;border-radius:20px;font-size:12px;">— සටහන් කර නැත</span>';
+    rows += '<tr><td><strong>' + month + '</strong></td><td>' + badge + '</td></tr>';
+  });
+
+  resultDiv.innerHTML =
+    '<div class="member-header" style="border-left:4px solid var(--gold);">' +
+      '<div class="member-header-avatar">👤</div>' +
+      '<div><h3>' + member.name + '</h3>' +
+      '<p>සාමාජික අංකය: <strong>#' + member.id + '</strong> | වර්ෂය: <strong>' + yearDisplay + '</strong></p></div>' +
+    '</div>' +
+    '<div class="summary-pills">' +
+      '<span class="pill pill-paid">✅ ගෙවූ මාස: ' + paidCount + '</span>' +
+      '<span class="pill pill-due">⚠️ හිඟ මාස: ' + dueCount + '</span>' +
+      (notCount > 0 ? '<span class="pill" style="background:#f3f4f6;color:#6b7280;padding:6px 14px;border-radius:20px;font-size:13px;font-weight:600;">— සටහන් නැත: ' + notCount + '</span>' : '') +
+    '</div>' +
+    '<div class="payment-table-wrap">' +
+      '<table>' +
+        '<thead><tr><th>මාසය</th><th>ගෙවීම් තත්ත්වය (' + yearDisplay + ')</th></tr></thead>' +
+        '<tbody>' + rows + '</tbody>' +
+      '</table>' +
+    '</div>';
+}
+
+function resetSearch() {
+  document.getElementById('memberSearchId').value = '';
+  document.getElementById('result').innerHTML = '';
+  removeTabs();
+  currentSearchedId = null;
+}
+
+document.getElementById('memberSearchId').addEventListener('keypress', e => {
+  if (e.key === 'Enter') searchMember();
+});
+
+
+// SCROLL REVEAL
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+}, { threshold: 0.06, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+setTimeout(() => document.querySelectorAll('.reveal').forEach(el => el.classList.add('active')), 1800);
 </script>
 
 </body>
