@@ -245,105 +245,82 @@ nav a:hover{background:var(--gold);color:var(--navy-dark);transform:translateY(-
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));
   gap:16px;margin-bottom:40px;
+.member-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: clamp(18px, 3.5vw, 26px) 16px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  /* අලුතින් එක් කළ Flexbox කේතය (තිරස් හැඩය සඳහා) */
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
 }
-.member-card{
-  background:var(--white);border-radius:var(--radius);
-  padding:clamp(18px,3.5vw,26px) 16px;
-  text-align:center;box-shadow:var(--shadow);transition:var(--transition);
+.member-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
 }
-.member-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);}
-.member-avatar{
-  width:62px;height:62px;border-radius:50%;
-  background:linear-gradient(135deg,var(--navy),var(--navy-light));
-  display:flex;align-items:center;justify-content:center;
-  font-size:28px;margin:0 auto 14px;
-  box-shadow:0 4px 12px rgba(11,61,107,0.25);
+.member-avatar {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy), var(--navy-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  box-shadow: 0 4px 12px rgba(11, 61, 107, 0.25);
+  /* margin වෙනස් කර ඡායාරූපය හැකිලීම නැවැත්වීමට flex-shrink එක් කර ඇත */
+  margin: 0;
+  flex-shrink: 0;
 }
-.member-role{
-  font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.6px;
-  color:var(--gold);margin-bottom:5px;
+/* අලුතින් එක් කළ Class එක (විස්තර එක මත එක තැබීමට) */
+.member-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
-.member-name{font-size:clamp(13px,2vw,14px);font-weight:700;color:var(--navy);}
-.committee-members-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(min(100%,200px),1fr));
-  gap:14px;
+.member-role {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--gold);
+  margin-bottom: 0;
 }
-.committee-member-card{
-  background:var(--white);border-radius:var(--radius-sm);
-  padding:16px;box-shadow:var(--shadow);
-  display:flex;align-items:center;gap:12px;
-  transition:var(--transition);
+.member-name {
+  font-size: clamp(13px, 2vw, 14px);
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0;
 }
-.committee-member-card:hover{transform:translateX(4px);box-shadow:var(--shadow-lg);}
-.committee-member-num{
-  width:36px;height:36px;border-radius:50%;flex-shrink:0;
-  background:var(--gray-1);color:var(--navy);
-  display:flex;align-items:center;justify-content:center;
-  font-size:13px;font-weight:700;
+
+/* පහත ඇති අනිත් CSS Classes (committee-members-grid ආදිය) කිසිදු වෙනසක් කර නැත. ඒවා එලෙසම තබාගන්න. */
+.committee-members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr));
+  gap: 14px;
 }
-.committee-member-info .role{font-size:11px;color:var(--gold);font-weight:700;}
-.committee-member-info .name{font-size:13px;font-weight:700;color:var(--navy);}
-.group-photo-box{
-  background:var(--gray-1);border-radius:var(--radius);border:3px dashed var(--gray-3);
-  padding:clamp(30px,6vw,56px) clamp(20px,4vw,40px);
-  text-align:center;margin-bottom:48px;
+.committee-member-card {
+  background: var(--white); border-radius: var(--radius-sm);
+  padding: 16px; box-shadow: var(--shadow);
+  display: flex; align-items: center; gap: 12px;
+  transition: var(--transition);
 }
-.portal-section{background:var(--gray-1);padding:clamp(56px,9vw,100px) 24px;}
-.portal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:28px;max-width:1280px;margin:0 auto;}
-.portal-box{
-  background:var(--white);border-radius:20px;
-  padding:clamp(24px,5vw,44px);box-shadow:var(--shadow-lg);
+.committee-member-card:hover { transform: translateX(4px); box-shadow: var(--shadow-lg); }
+.committee-member-num {
+  width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+  background: var(--gray-1); color: var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 700;
 }
-.portal-box-title{
-  font-family:'Noto Serif Sinhala',serif;
-  font-size:clamp(17px,3vw,22px);font-weight:700;color:var(--navy);
-  margin-bottom:6px;display:flex;align-items:center;gap:10px;
-}
-.portal-box-sub{font-size:14px;color:var(--text-soft);margin-bottom:24px;}
-.portal-label{font-size:13px;font-weight:700;color:var(--text-soft);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;}
-.portal-input-wrap{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;}
-.portal-input-wrap input{
-  flex:1;min-width:0;padding:13px 16px;font-size:16px;font-family:inherit;
-  border-radius:var(--radius-sm);border:2px solid var(--gray-2);
-  outline:none;transition:var(--transition);color:var(--text);
-}
-.portal-input-wrap input:focus{border-color:var(--navy-light);}
-#result{margin-top:20px;}
-.member-header{
-  display:flex;align-items:center;gap:14px;
-  background:var(--gray-1);border-radius:var(--radius-sm);
-  padding:16px 20px;margin-bottom:18px;border-left:4px solid var(--navy-light);
-}
-.member-header-avatar{
-  width:50px;height:50px;border-radius:50%;
-  background:linear-gradient(135deg,var(--navy),var(--navy-light));
-  display:flex;align-items:center;justify-content:center;
-  font-size:22px;flex-shrink:0;
-}
-.member-header h3{font-size:clamp(15px,3vw,18px);color:var(--navy);font-weight:700;}
-.member-header p{font-size:13px;color:var(--text-soft);}
-.payment-table-wrap{overflow-x:auto;border-radius:var(--radius-sm);border:1.5px solid var(--gray-2);}
-table{width:100%;border-collapse:collapse;min-width:260px;}
-th,td{padding:clamp(10px,2.5vw,14px) clamp(12px,3vw,20px);border-bottom:1px solid var(--gray-1);text-align:left;font-size:clamp(13px,2vw,15px);}
-th{background:var(--gray-1);color:var(--navy);font-weight:700;font-size:13px;}
-tr:last-child td{border-bottom:none;}
-tr:hover td{background:#fafcff;}
-.badge{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:999px;font-size:13px;font-weight:700;}
-.paid{background:#d1fae5;color:#065f46;}
-.due{background:#fee2e2;color:#991b1b;}
-.summary-pills{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;}
-.pill{padding:6px 16px;border-radius:999px;font-size:13px;font-weight:700;}
-.pill-paid{background:#d1fae5;color:#065f46;}
-.pill-due{background:#fee2e2;color:#991b1b;}
-.error-box{background:#fff5f5;border:1.5px solid #fecaca;border-radius:var(--radius-sm);padding:16px 20px;color:#991b1b;font-weight:600;text-align:center;}
-.join-box{text-align:center;}
-.join-icon{font-size:48px;margin-bottom:16px;display:block;}
-.join-box p{color:var(--text-soft);font-size:15px;line-height:1.9;margin-bottom:24px;}
-.join-info{
-  background:var(--gray-1);border-radius:var(--radius-sm);
-  padding:18px 20px;text-align:left;margin-bottom:20px;
-  font-size:14px;color:var(--text-soft);line-height:1.9;
+.committee-member-info .role { font-size: 11px; color: var(--gold); font-weight: 700; }
+.committee-member-info .name { font-size: 13px; font-weight: 700; color: var(--navy); }
+.group-photo-box {
+  background: var(--gray-1); border-radius: var(--radius); border: 3px dashed var(--gray-3);
+  padding: clamp(30px, 6vw, 56px) clamp(20px, 4vw, 40px);
+  text-align: center; margin-bottom: 48px;
 }
 .join-info strong{color:var(--navy);}
 .bank-info{
